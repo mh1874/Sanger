@@ -1,0 +1,16 @@
+.classify {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .classify-ul {
+        line-height: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .container {
+        flex: 1;
+        background: #7E8C8D;
+    }
+}

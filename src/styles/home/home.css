@@ -1,0 +1,10 @@
+.home {
+  display: flex;
+  flex-direction: column; }
+  .home .home-ul {
+    flex: 1; }
+    .home .home-ul li {
+      width: 100%; }
+      .home .home-ul li img {
+        width: 100px;
+        height: 100px; }

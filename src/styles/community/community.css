@@ -1,0 +1,6 @@
+.community {
+  display: flex;
+  flex-direction: column; }
+  .community .container {
+    flex: 1;
+    background: #7E8C8D; }
