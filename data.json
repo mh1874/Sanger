@@ -1,0 +1,337 @@
+{
+	"menu" : [
+		{
+			"name" : "蛋糕",
+			"src" : "http://static.21cake.com//themes/wap/img/home-cake.png"
+		},
+		{
+			"name" : "冰淇淋",
+			"src" : "http://static.21cake.com//themes/wap/img/home-ice.png"
+		},
+		{
+			"name" : "咖啡",
+			"src" : "http://static.21cake.com//upload/images/a55257f79fb9c1486e10790d86472454.jpg"
+		},
+		{
+			"name" : "企业专区",
+			"src" : "http://static.21cake.com//themes/wap/img/home-gift.png"
+		}
+	],
+	"goods" : [
+		{
+			"headImg" : "http://static.21cake.com//upload/images/5bc7eba5c2d96bc6010691252ec66fb3.jpg",
+			"englishName" : "Mango Cream Cake",
+			"chineseName" : "芒果奶油蛋糕",
+			"details-explain" : "2000人测评， 定义鲜果奶油蛋糕合理价格： 2磅/198元 。",
+			"swipeImg" : "http://static.21cake.com//upload/images/51e435ddfe18f476ca26c387874d52f6.jpg",
+			"sweetNum" : "3",
+			"distribution" : "现在订购最早明天 09:30配送。每日最晚配送时间21:30。",
+			"select" : "",
+			"portion" : "2.0磅",
+			"introduce" : "坚持应季大台农鲜切芒果",
+			"label" : [
+				"乳脂奶油",
+				"水果"
+			],
+			"materials" : [
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-18.png",
+					"name" : "芒果"
+				},
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-25.png",
+					"name" : "百香果酱"
+				}
+			],
+			"group" : [
+				{
+					"img" : "http://static.21cake.com/public/images/b4/59/ee/5ac5dd433b3f4484816b7387f429a975.jpg",
+					"name" : "芒果奶油蛋糕"
+				},
+				{
+					"img" : "http://static.21cake.com/public/images/1d/ac/08/a363d1407754b8d408590d2dc5145e1a.jpg",
+					"name" : "Q版孙悟空手办（随机一个）"
+				}
+			],
+			"price" : {
+				"groupPrice" : "230.00 - 430.00",
+				"oldPrice" : "253.00 - 453.00",
+				"newPrice" : "198.00"
+			},
+			"details" : [
+				"/不使用罐头水果和植混奶油/",
+				"/坚持应季大台农鲜切芒果/",
+				"/新西兰纯乳脂奶油/",
+				"21cake配方芒果百香果慕斯夹心/"
+			],
+			"detailsImg" : [
+				"http://static.21cake.com/public/images/e4/67/d0/98156a4bd977e03de9b026919478477f.jpg?1499159091#w",
+				"http://static.21cake.com/public/images/99/27/9c/82f27d3f0f14261d47a7f3c01f1f1c02.jpg?1499071446#w",
+				"http://static.21cake.com/public/images/dd/a9/c0/28e5b4e0130a51eefffd7bd137784747.jpg?1499071461#w",
+				"http://static.21cake.com/public/images/eb/8c/dd/8948ba213af9b8e60138ed29b762e93b.jpg?1499335676#h",
+				"http://static.21cake.com/public/images/29/9e/f0/d3fef25bc6e010b78441a3a05cf06a91.jpg?1484717350#w"
+			]
+		},
+		{
+			"headImg" : "http://static.21cake.com//upload/images/698b8f8450a5083160a25001b8c8de9a.jpg",
+			"englishName" : "Six Different Flavored Cakes",
+			"chineseName" : "6口味切块",
+			"details-explain" : "",
+			"swipeImg" : "http://static.21cake.com//upload/images/51e435ddfe18f476ca26c387874d52f6.jpg",
+			"sweetNum" : "2",
+			"distribution" : "现在订购最早明天 09:30配送。每日最晚配送时间21:30。",
+			"select" : "已选择：6个（6种口味）",
+			"portion" : "2.0磅",
+			"introduce" : "多口味，精装",
+			"label" : [
+				"乳脂奶油",
+				"坚果",
+				"水果"
+			],
+			"materials" : [
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-18.png",
+					"name" : "芒果"
+				}
+			],
+			"group" : [],
+			"price" : {
+				"groupPrice" : "",
+				"oldPrice" : "",
+				"newPrice" : "198.00"
+			},
+			"details" : [
+				"/21cake切块蛋糕/",
+				"/月销进入3万盒之际/",
+				"//所有口味，单盒克数增加多至45%/"
+			],
+			"detailsImg" : [
+				"http://static.21cake.com/public/images/65/16/df/5f069a91fe62025ff5e14862e895fbbf.jpg?1501577732#w",
+				"http://static.21cake.com/public/images/3e/7a/ac/db5353a9a26e076fd6cd9614f820af1f.jpg?1501577739#w",
+				"http://static.21cake.com/public/images/46/85/8a/0f96340984a6abfc3b34515accedef57.jpg?1501577747#w",
+				"http://static.21cake.com/public/images/cb/ca/a5/c32337995933eec73a4a663d5cc9a07f.jpg?1501577754#w"
+			]
+		},
+		{
+			"headImg" : "http://static.21cake.com//upload/images/1cbfe41e48f2e35677cf3a9f071fe66d.jpg",
+			"englishName" : "Fruit Pocket",
+			"chineseName" : "花格",
+			"details-explain" : "现在它是你需要的“水果蛋糕”了",
+			"swipeImg" : "",
+			"sweetNum" : "4",
+			"distribution" : "现在订购最早明天 09:30配送。每日最晚配送时间21:30。",
+			"select" : "",
+			"portion" : "2.0磅",
+			"introduce" : "更大的，果盘",
+			"label" : [
+				"乳脂奶油",
+				"水果"
+			],
+			"materials" : [
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-04.png",
+					"name" : "白巧克力"
+				},
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-21.png",
+					"name" : "时令鲜果"
+				},
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-16.png",
+					"name" : "椰蓉"
+				}
+			],
+			"group" : [
+				{
+					"img" : "http://static.21cake.com/public/images/50/ca/e8/d391210e16d1dd5e2402ceb8f87d94e2.jpg",
+					"name" : "花格"
+				},
+				{
+					"img" : "http://static.21cake.com/public/images/1d/ac/08/a363d1407754b8d408590d2dc5145e1a.jpg",
+					"name" : "Q版孙悟空手办（随机一个）"
+				}
+			],
+			"price" : {
+				"groupPrice" : "230.00 - 782.00",
+				"oldPrice" : "253.00 - 805.00",
+				"newPrice" : "298.00"
+			},
+			"details" : [
+				"*北京、天津、杭州、上海、苏州、无锡、广州、深圳应季搭配为：哈密瓜、绿果猕猴桃。",
+				"/现在它是你需要的“水果蛋糕”了/",
+				"*增加2磅及以上规格水果用量比例 ，以及更易化的，白巧克力薄卷",
+				"/去世界更多的地方，走入更多水果成熟的季节，欣赏、采集/",
+				"A colourful crowding of fresh fruit all hemmed in by coconut. Grab that spoon and get diggin' "
+			],
+			"detailsImg" : [
+				"http://static.21cake.com/public/images/ab/de/e0/4bea447a526ec22e5bd59f8ee490fc35.jpg?1500973877#h",
+				"http://static.21cake.com/public/images/25/a3/cf/dc269cd544f01747c27565529299f0e1.jpg?1500973884#w",
+				"http://static.21cake.com/public/images/4c/ba/ef/66e4ea109bf94955a225c3d52b88289d.jpg?1472719118#h",
+				"http://static.21cake.com/public/images/29/9e/f0/d3fef25bc6e010b78441a3a05cf06a91.jpg?1484717350#w"
+			]
+		},
+		{
+			"headImg" : "http://static.21cake.com//themes/wap/img/goods/banner/669b49349580cc82ee6f0f042ac4d5c0.jpg",
+			"englishName" : "Café Mocha",
+			"chineseName" : "摩卡",
+			"details-explain" : "精品咖啡融合黑巧克力酱",
+			"swipeImg" : "",
+			"sweetNum" : "3",
+			"portion" : "2.0磅",
+			"distribution" : "现在订购最早明天 09:30配送。每日最晚配送时间21:30。",
+			"select" : "",
+			"introduce" : "咖啡因狂人留步",
+			"label" : [
+				"乳脂奶油",
+				"巧克力",
+				"咖啡"
+			],
+			"materials" : [
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-15.png",
+					"name" : "耶加雪菲咖啡豆"
+				},
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-04.png",
+					"name" : "比利时巧克力"
+				}	
+			],
+			"group" : [
+				{
+					"img" : "http://static.21cake.com/public/images/50/ca/e8/d391210e16d1dd5e2402ceb8f87d94e2.jpg",
+					"name" : "花格"
+				},
+				{
+					"img" : "http://static.21cake.com/public/images/1d/ac/08/a363d1407754b8d408590d2dc5145e1a.jpg",
+					"name" : "Q版孙悟空手办（随机一个）"
+				}
+			],
+			"price" : {
+				"groupPrice" : "",
+				"oldPrice" : "",
+				"newPrice" : "398.00"
+			},
+			"details" : [
+				"/世上还有摩卡，就有无尽挣扎/"
+			],
+			"detailsImg" : [
+				"http://cs.21cake.com/public/images/8c/d6/4d/ffc97a73fe3cd5b15ec543e0eec05971.jpg?1493001034#w",
+				"http://cs.21cake.com/public/images/6b/a7/2d/94b66130b52df5b8a1c276ba3ae80ce3.jpg?1493001042#w",
+				"http://cs.21cake.com/public/images/d8/be/bf/9bb42699921c9a65367ba63061c298cf.jpg?1493001050#w",
+				"http://cs.21cake.com/public/images/1b/fa/c2/df7ece334b0aeabce4e458604d94af4c.jpg?1493001058#w",
+				"http://cs.21cake.com/public/images/48/fc/80/10106cb6401116cda1600ded44aaf261.jpg?1493001067#w",
+				"http://cs.21cake.com/public/images/11/31/c3/a493db91f525a252ffbbe901596debe1.jpg?1493365800#h",
+				"http://static.21cake.com/public/images/29/9e/f0/d3fef25bc6e010b78441a3a05cf06a91.jpg?1484717350#w"
+			]
+		},
+		{
+			"headImg" : "http://static.21cake.com//upload/images/5d919bee5eef45e6cfd9ce32d73df476.jpg",
+			"englishName" : "Cappuccino In Mind",
+			"chineseName" : "新卡",
+			"details-explain" : "低温乳脂奶油冷萃耶加雪菲",
+			"swipeImg" : "",
+			"sweetNum" : "2",
+			"distribution" : "现在订购最早明天 09:30配送。每日最晚配送时间21:30。",
+			"select" : "",
+			"portion" : "2.0磅",
+			"introduce" : "精品咖啡蛋糕",
+			"label" : [
+				"乳脂奶油",
+				"咖啡"
+			],
+			"materials" : [
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-03.png",
+					"name" : "咖啡酒"
+				},
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-15.png",
+					"name" : "精品咖啡豆"
+				}	
+			],
+			"group" : [],
+			"price" : {
+				"groupPrice" : "",
+				"oldPrice" : "",
+				"newPrice" : "398.00"
+			},
+			"details" : [
+				"/低温乳脂奶油冷萃耶加雪菲/",
+				"/配马达加斯加香草戚风/"
+			],
+			"detailsImg" : [
+				"http://cs.21cake.com/public/images/cd/44/aa/83aece24e31799f704b3e6fa833aa5f0.jpg?1493000533#w",
+				"http://cs.21cake.com/public/images/92/dd/a2/42036006e2d4c7896a4e17c402a4dcae.jpg?1493000541#w",
+				"http://cs.21cake.com/public/images/a3/d9/0c/115754011d5b74f9c3af5777de164325.jpg?1493000550#h",
+				"http://cs.21cake.com/public/images/64/fd/10/81374b6cdf08aba88f972f597cbc3cd7.jpg?1493000559#h",
+				"http://cs.21cake.com/public/images/56/5e/9e/913ca929fa204f253823f059f8e38aa6.jpg?1493365566#h",
+				"http://static.21cake.com/public/images/29/9e/f0/d3fef25bc6e010b78441a3a05cf06a91.jpg?1484717350#w"
+			]
+		},
+		{
+			"headImg" : "http://static.21cake.com//themes/wap/img/goods/banner/M-DetailsWinImg-012-01.jpeg",
+			"englishName" : "Bailey's Love Triangle",
+			"chineseName" : "百利甜情人",
+			"details-explain" : "当日空运玫瑰裱花，双层芒果夹心",
+			"swipeImg" : "",
+			"sweetNum" : "4",
+			"distribution" : "现在订购最早明天 09:30配送。每日最晚配送时间21:30。",
+			"fresh" : "0-4℃保藏10小时，5℃食用为佳",
+			"accessories" : "含标配餐具，可添加巧克力生日牌，不含蜡烛",
+			"select" : "",
+			"portion" : "2.0磅",
+			"introduce" : "当日空运玫瑰裱花，双层芒果夹心",
+			"label" : [
+				"乳脂奶油",
+				"水果",
+				"含酒"
+			],
+			"materials" : [
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-03.png",
+					"name" : "百利甜酒"
+				},
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-18.png",
+					"name" : "芒果"
+				},
+				{
+					"img" : "http://static.21cake.com//themes/wap/img/goods/icon/micon-19.png",
+					"name" : "空运玫瑰花"
+				}	
+			],
+			"group" : [],
+			"price" : {
+				"groupPrice" : "",
+				"oldPrice" : "",
+				"newPrice" : "298.00"
+			},
+			"details" : [
+				"/爱尔兰百利甜酒/新西兰奶油/云南玫瑰甘露/",
+				"Just Bailey's, light cream and you. The flavours may be velvetty subtle, but the chemistry is as electric as a first kiss. ",
+				"夹心为芒果"
+			],
+			"detailsImg" : [
+				"http://cs.21cake.com/public/images/98/58/a3/d5a573d3d158235fecb2830c62686a0b.jpg?1495614070#w",
+				"http://static.21cake.com/public/images/d2/05/6d/b34895b2c3186a7067e489e273c912cd.jpg?1488855343#h",
+				"http://static.21cake.com/public/images/f1/9f/65/d1c1d67eebb8c5c0ff20be116af52883.png?1472718235#h",
+				"http://static.21cake.com/public/images/a8/c0/2a/5d11a5a4a3dcd05da73450392b357b3e.jpg?1485049616#w"
+			]
+		}
+	],
+	"article" : {
+			"title" : "九月刊·茉莉",
+			"time" : "2017-09-13",
+			"articleImg" : [
+				"http://static.21cake.com/public/images/08/ca/75/6f63c5f8de95922ddc67e1c7b95f1ba5.jpg?1505280753#h",
+				"http://static.21cake.com/public/images/90/7e/a0/438d077cfaf406fe9a39e2c7efd6de97.jpg?1505280763#h",
+				"http://static.21cake.com/public/images/4b/34/00/eee036c56b1901832564b71aa8b47517.jpg?1505280781#h",
+				"http://static.21cake.com/public/images/f4/82/23/99e29b8d10996ffa6225b37f399f5d7b.jpg?1505281181#w",
+				"http://static.21cake.com/public/images/1a/61/1e/d7713f189ab2839b067693f6e7d40e2f.jpg?1505281027#h",
+				"http://static.21cake.com/public/images/43/c6/5e/b27973bc140e0578a20579acc45d27f1.jpg?1505281036#h",
+				"http://static.21cake.com/public/images/d2/f1/45/b5380e249108542e2eb3560a43d2c922.jpg?1505281058#h",
+				"http://static.21cake.com/public/images/f4/82/23/99e29b8d10996ffa6225b37f399f5d7b.jpg?1505281181#w"
+			]
+		}
+	
+}
