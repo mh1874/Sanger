@@ -43,6 +43,7 @@ class Home extends React.Component {
 	}
 	render() {
 		return (
+<<<<<<< HEAD
 				<div id="homeMain" >
 					<div className="home">
 						<Header />
@@ -81,7 +82,50 @@ class Home extends React.Component {
 										}
 									</ul>
 								</div>
+=======
+			<div id="homeMain" >
+				<div className="home">
+					<Header />
+					<div className="section" ref="homeWrapper">
+						<div className="homeWrapper">	
+							<Carousel autoplay={4000}>
+							    <div><h3>1</h3></div>
+							    <div><h3>2</h3></div>
+							</Carousel>
+							<div className="menu">
+								<ul>
+									<li>
+										<div>1</div>
+										<span>蛋糕</span>
+									</li>
+									<li>
+										<div>2</div>
+										<span>冰淇淋</span>
+									</li>
+									<li>
+										<div>3</div>
+										<span>咖啡</span>
+									</li>
+										<li>
+										<div>4</div>
+										<span>企业专区</span>
+									</li>
+								</ul>
+>>>>>>> 1fcf4726165c6dcc04973c9161800f1cac5f6ec4
 							</div>
+							<ul className="home-ul">
+								{
+									this.state.list.map((item, index) => {
+										return <li key={item._id}>
+												<img src={item.src} alt="item.name"/>
+												<span>{item.name}</span>
+												<Link to={"/detail/" + item.name}>详情页</Link>
+											</li>
+									})
+								}
+							</ul>
+						</div>
+					</div>
 					<Footer />
 				</div>
 			</div>	
