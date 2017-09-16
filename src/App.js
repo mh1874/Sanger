@@ -9,6 +9,7 @@ import Classify from './components/Classify/Classify.js'
 import Community from './components/Community/Community.js'
 import My from './components/My/My.js'
 import Detail from './components/Detail/Detail.js'
+import DetailList from './components/DetailList/DetailList.js'
 
 const App = () => (
   <Router>
@@ -18,6 +19,7 @@ const App = () => (
       <Route path="/community" component={Community}/>
       <Route path="/my" component={My}/>
       <Route path="/detail/:id" component={Detail}/>
+      <Route path="/detailList/:id" component={DetailList}/>
     </div>
   </Router>
 )

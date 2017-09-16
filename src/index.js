@@ -7,6 +7,7 @@ import './iconfont/iconfont.css';
 import './styles/reset/reset.css';
 import './styles/footer/footer.css';
 import './styles/header/header.css';
+import './styles/header/headerList.css';
 
 
 import './styles/home/home.css';
