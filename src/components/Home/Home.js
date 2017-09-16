@@ -1,7 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
+import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
 //引入轮播图UI
 import { Carousel } from 'antd';
@@ -9,19 +9,26 @@ import { Carousel } from 'antd';
 import BScroll from 'better-scroll'
 
 
-class HomeUI extends React.Component {
+class Home extends React.Component {
+	constructor() {
+		super();//调用父类构造器
+		this.state = {list: []};
+	}
 	componentDidMount() {
-		this.props.fetchListData();
+		 fetch("/api/getdataMenu").then((res) => {
+		 	return res.json();
+		 }).then((data)=>{
+		 	console.log(data);
+		 	this.setState({ //让页面上数据更新
+		 		list: data
+		 	})
+		 })
 	}
 	render() {
-		console.log(this.props)
 		return (
 			<div className="home">
-					<div className="header">
-						<p></p>
-						<p>蛋糕</p>
-						<p>北京</p>
-					</div>
+
+					<Header />
 					<div className="section">
 					<Carousel autoplay={4000}>
 					    <div><h3>1</h3></div>
@@ -47,18 +54,17 @@ class HomeUI extends React.Component {
 							</li>
 						</ul>
 					</div>
-					<ul className="home-ul">
-						{
-							this.props.home_list.map((item, index) => {
-								return <li key={"h_l" + index}>
-											<img src={item.logo} />
-											<span>{item.shop_name}</span>
-											<span>{item.price}</span>
-											<Link to={"/detail/" + item.shop_name}>详情页</Link>
-										</li>
-							})
-						}
-					</ul>
+						<ul className="home-ul">
+							{
+								this.state.list.map((item, index) => {
+									return <li key={item._id}>
+												<img src={item.src} />
+												<span>{item.name}</span>
+												<Link to={"/detail/" + item.name}>详情页</Link>
+											</li>
+								})
+							}
+						</ul>
 					</div>
 				<Footer />
 			</div>
@@ -66,26 +72,4 @@ class HomeUI extends React.Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	return {
-		home_list: state.home_list
-	};
-};
-
-const mapDispatchToProps = (dispatch) => {
-	return {
-		fetchListData: () => {
-			fetch('/api/getdata').then((res) => {
-				return res.json();
-			}).then((json) => {
-				dispatch({
-					type: "GET_HOME",
-					payload: json
-				})
-			})
-		}
-	};
-};
-	
-const Home = connect(mapStateToProps, mapDispatchToProps)(HomeUI);
 export default Home;

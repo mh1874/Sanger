@@ -3,14 +3,30 @@
     height: 48px;
     border-top: 1px solid #d8d8d8;
     .footer-ul {
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
         li {
             height: 100%;
             width: 25%;
-            line-height: 48px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .selected {
+                color: #ff0;
+            }
+            a {
+                i {
+                    font-size: 18px;
+                }
+            }
+            span {
+                margin-top: 8px;
+                font-size: 10px;
+                color: #cbcbcb;
+            }
         }
     }
 }
