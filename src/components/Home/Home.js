@@ -17,7 +17,7 @@ class Home extends React.Component {
 		 fetch("/api/getdataMenu").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-		 	console.log(data);
+//		 	console.log(data);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
 		 	})
@@ -25,7 +25,7 @@ class Home extends React.Component {
 		 fetch("/api/getdataSwiper").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-		 	console.log(data);
+//		 	console.log(data);
 		 	this.setState({ //让页面上数据更新
 		 		swiper: data
 		 	})
@@ -48,11 +48,11 @@ class Home extends React.Component {
 						<Header />
 							<div className="section" ref="homeWrapper">
 								<div className="homeWrapper">	
-									<Carousel autoplay={4000}>
+									<Carousel autoplay>
 									    {
 											this.state.swiper.map((item,index)=>{
-												return <div key={"xx"+index} className="swiperImg">
-															<img src={item.src} />
+												return <div key={item._id} className="swiperImg">
+															<img src={item.src} alt={item.name}/>
 													   </div>
 											})
 										}
@@ -62,7 +62,7 @@ class Home extends React.Component {
 											{
 												this.state.list.map((item, index) => {
 													return <li key={item._id}>
-																<div><img src={item.src} /></div>
+																<div><img src={item.src} alt={item.name}/></div>
 																<span>{item.name}</span>
 															</li>
 												})
@@ -73,7 +73,7 @@ class Home extends React.Component {
 										{
 											this.state.list.map((item, index) => {
 												return <li key={item._id}>
-														<img src={item.src} alt="item.name"/>
+														<img src={item.src} alt={item.name}/>
 														<span>{item.name}</span>
 														<Link to={"/detail/" + item.name}>详情页</Link>
 													</li>
