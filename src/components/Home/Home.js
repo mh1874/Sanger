@@ -11,14 +11,23 @@ import BScroll from 'better-scroll'
 class Home extends React.Component {
 	constructor() {
 		super();//调用父类构造器
-		this.state = {list: []};
+		this.state = {list: [],swiper : []};
 	}
 	componentDidMount() {
 		 fetch("/api/getdataMenu").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
+		 	console.log(data);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
+		 	})
+		 });
+		 fetch("/api/getdataSwiper").then((res) => {
+		 	return res.json();
+		 }).then((data)=>{
+		 	console.log(data);
+		 	this.setState({ //让页面上数据更新
+		 		swiper: data
 		 	})
 		 }).then(() => {
 		 	setTimeout(() => {
@@ -40,27 +49,24 @@ class Home extends React.Component {
 							<div className="section" ref="homeWrapper">
 								<div className="homeWrapper">	
 									<Carousel autoplay={4000}>
-									    <div><h3>1</h3></div>
-									    <div><h3>2</h3></div>
+									    {
+											this.state.swiper.map((item,index)=>{
+												return <div key={"xx"+index} className="swiperImg">
+															<img src={item.src} />
+													   </div>
+											})
+										}
 									</Carousel>
 									<div className="menu">
 										<ul>
-											<li>
-												<div>1</div>
-												<span>蛋糕</span>
-											</li>
-											<li>
-												<div>2</div>
-												<span>冰淇淋</span>
-											</li>
-											<li>
-												<div>3</div>
-												<span>咖啡</span>
-											</li>
-												<li>
-												<div>4</div>
-												<span>企业专区</span>
-											</li>
+											{
+												this.state.list.map((item, index) => {
+													return <li key={item._id}>
+																<div><img src={item.src} /></div>
+																<span>{item.name}</span>
+															</li>
+												})
+											}
 										</ul>
 									</div>
 									<ul className="home-ul">
