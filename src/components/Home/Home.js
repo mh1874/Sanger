@@ -17,7 +17,7 @@ class Home extends React.Component {
 		 fetch("/api/getdataMenu").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-		 	console.log(data);
+//		 	console.log(data);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
 		 	})
@@ -25,7 +25,7 @@ class Home extends React.Component {
 		 fetch("/api/getdataSwiper").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-		 	console.log(data);
+//		 	console.log(data);
 		 	this.setState({ //让页面上数据更新
 		 		swiper: data
 		 	})
@@ -47,12 +47,12 @@ class Home extends React.Component {
 					<div className="home">
 						<Header />
 							<div className="section" ref="homeWrapper">
-								<div className="homeWrapper">	
-									<Carousel autoplay={4000}>
+								<div className="homeWrapper">
+									<Carousel autoplay>
 									    {
 											this.state.swiper.map((item,index)=>{
-												return <div key={"xx"+index} className="swiperImg">
-															<img src={item.src} />
+												return <div key={item._id} className="swiperImg">
+															<img src={item.src} alt={item.name}/>
 													   </div>
 											})
 										}
@@ -62,7 +62,7 @@ class Home extends React.Component {
 											{
 												this.state.list.map((item, index) => {
 													return <li key={item._id}>
-																<div><img src={item.src} /></div>
+																<div><img src={item.src} alt={item.name}/></div>
 																<span>{item.name}</span>
 															</li>
 												})
@@ -73,7 +73,7 @@ class Home extends React.Component {
 										{
 											this.state.list.map((item, index) => {
 												return <li key={item._id}>
-														<img src={item.src} alt="item.name"/>
+														<img src={item.src} alt={item.name}/>
 														<span>{item.name}</span>
 														<Link to={"/detail/" + item.name}>详情页</Link>
 													</li>
@@ -81,6 +81,34 @@ class Home extends React.Component {
 										}
 									</ul>
 								</div>
+			<div id="homeMain" >
+				<div className="home">
+					<Header />
+					<div className="section" ref="homeWrapper">
+						<div className="homeWrapper">	
+							<Carousel autoplay={4000}>
+							    <div><h3>1</h3></div>
+							    <div><h3>2</h3></div>
+							</Carousel>
+							<div className="menu">
+								<ul>
+									<li>
+										<div>1</div>
+										<span>蛋糕</span>
+									</li>
+									<li>
+										<div>2</div>
+										<span>冰淇淋</span>
+									</li>
+									<li>
+										<div>3</div>
+										<span>咖啡</span>
+									</li>
+										<li>
+										<div>4</div>
+										<span>企业专区</span>
+									</li>
+								</ul>
 							</div>
 					<Footer />
 				</div>
