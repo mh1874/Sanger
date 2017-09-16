@@ -11,7 +11,6 @@ import Community from './components/Community/Community.js'
 import My from './components/My/My.js'
 import Detail from './components/Detail/Detail.js'
 
-
 const App = () => (
   <Router>
     <div>
