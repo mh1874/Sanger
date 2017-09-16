@@ -19,11 +19,11 @@ class Header extends React.Component {
 				let url = `/v2/?callback=renderReverse&location=${position.coords.longitude},${position.coords.latitude}&output=json&pois=1&ak=09BMikHzasSofh3i3gXSENEwDvSVkQQ2`;
 				fetch(url).then((res) => {
 					console.log(res)
-				 	return res.json();
+//				 	return res.json();
 				 }).then((data)=>{
-				 	this.setState({ //让页面上数据更新
-				 		yourPosition: data
-				 	})
+//				 	this.setState({ //让页面上数据更新
+//				 		yourPosition: data
+//				 	})
 				 })
 			});
 		}	
@@ -40,7 +40,7 @@ class Header extends React.Component {
 		        </li>
 		        <li className="header-position">
 		        	<i className="iconfont">&#xe6fc;</i>
-		        	<span className="position">{this.state.yourPosition}</span>
+		        	<span className="position"></span>
 		        </li>
 		      </ul>
 		    </div>
