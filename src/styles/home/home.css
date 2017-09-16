@@ -1,10 +1,10 @@
 .home {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   height: 100%; }
   .home .section {
-    flex: 1; }
+    flex: 1;
+    overflow: hidden; }
   .home .menu {
     width: 100%;
     height: 85px;
@@ -25,6 +25,9 @@
           text-align: center;
           line-height: 65px;
           background: #ccc; }
+          .home .menu ul li div img {
+            width: 100%;
+            height: 100%; }
         .home .menu ul li span {
           width: 100%;
           height: 25px;
@@ -33,12 +36,12 @@
   .home .ant-carousel {
     width: 100%;
     height: 173px; }
-    .home .ant-carousel h3 {
+    .home .ant-carousel div {
       width: 100%;
-      height: 100%;
-      text-align: center;
-      line-height: 173px;
-      background: blue; }
+      height: 100%; }
+      .home .ant-carousel div img {
+        width: 100%;
+        height: 100%; }
   .home .home-ul li {
     width: 100%; }
     .home .home-ul li img {
