@@ -2,12 +2,18 @@
   display: flex;
   flex-direction: column;
   height: 100%; }
-  .classify .classify-ul {
-    line-height: 48px;
+  .classify .classifyWrapper {
     height: 48px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center; }
+    overflow: hidden; }
+    .classify .classifyWrapper .classify-ul {
+      line-height: 48px;
+      height: 48px;
+      width: 500px; }
+      .classify .classifyWrapper .classify-ul li {
+        float: left;
+        width: 100px;
+        height: 100%;
+        text-align: center; }
   .classify .container {
     flex: 1;
     background: #7E8C8D; }
