@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom'
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
 import {Link} from 'react-router-dom';
@@ -8,6 +9,10 @@ import {Link} from 'react-router-dom';
 import BScroll from 'better-scroll'
 
 export default class Classify extends React.Component {
+	constructor(){
+		super();
+		this.state = {list: []};
+	}
 	componentDidMount() {
 		this._menuScroll();
 	}
@@ -33,22 +38,11 @@ export default class Classify extends React.Component {
 						</ul>
 					</div>	
 					<div className="container"><h1>内容</h1></div>
+
 					<Footer />
 			</div>
 		);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 

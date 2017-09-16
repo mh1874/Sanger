@@ -16,12 +16,12 @@
         #homeMain .home .section .homeWrapper .ant-carousel {
           width: 100%;
           height: 173px; }
-          #homeMain .home .section .homeWrapper .ant-carousel h3 {
+          #homeMain .home .section .homeWrapper .ant-carousel .swiperImg {
             width: 100%;
-            height: 100%;
-            text-align: center;
-            line-height: 173px;
-            background: blue; }
+            height: 100%; }
+            #homeMain .home .section .homeWrapper .ant-carousel .swiperImg img {
+              width: 100%;
+              height: 100%; }
         #homeMain .home .section .homeWrapper .menu {
           width: 100%;
           height: 85px;
@@ -42,6 +42,9 @@
                 text-align: center;
                 line-height: 65px;
                 background: #ccc; }
+                #homeMain .home .section .homeWrapper .menu ul li div img {
+                  width: 100%;
+                  height: 100%; }
               #homeMain .home .section .homeWrapper .menu ul li span {
                 width: 100%;
                 height: 25px;

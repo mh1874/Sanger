@@ -11,14 +11,23 @@ import BScroll from 'better-scroll'
 class Home extends React.Component {
 	constructor() {
 		super();//调用父类构造器
-		this.state = {list: []};
+		this.state = {list: [],swiper : []};
 	}
 	componentDidMount() {
 		 fetch("/api/getdataMenu").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
+		 	console.log(data);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
+		 	})
+		 });
+		 fetch("/api/getdataSwiper").then((res) => {
+		 	return res.json();
+		 }).then((data)=>{
+		 	console.log(data);
+		 	this.setState({ //让页面上数据更新
+		 		swiper: data
 		 	})
 		 }).then(() => {
 		 	setTimeout(() => {
