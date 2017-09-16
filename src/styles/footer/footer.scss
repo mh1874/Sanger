@@ -10,14 +10,15 @@
         li {
             height: 100%;
             width: 25%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             .selected {
-                color: #ff0;
+                color: skyblue;
             }
             a {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 5px;
                 i {
                     font-size: 18px;
                 }
@@ -25,7 +26,6 @@
             span {
                 margin-top: 8px;
                 font-size: 10px;
-                color: #cbcbcb;
             }
         }
     }

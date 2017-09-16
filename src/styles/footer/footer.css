@@ -9,16 +9,17 @@
     justify-content: space-around; }
     .footer .footer-ul li {
       height: 100%;
-      width: 25%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; }
+      width: 25%; }
       .footer .footer-ul li .selected {
-        color: #ff0; }
-      .footer .footer-ul li a i {
-        font-size: 18px; }
+        color: skyblue; }
+      .footer .footer-ul li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px; }
+        .footer .footer-ul li a i {
+          font-size: 18px; }
       .footer .footer-ul li span {
         margin-top: 8px;
-        font-size: 10px;
-        color: #cbcbcb; }
+        font-size: 10px; }

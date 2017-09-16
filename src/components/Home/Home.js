@@ -13,7 +13,6 @@ class Home extends React.Component {
 		 fetch("/api/getdataMenu").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-		 	console.log(data);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
 		 	})
