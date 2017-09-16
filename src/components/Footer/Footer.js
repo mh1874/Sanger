@@ -7,26 +7,26 @@ const Footer = () => (
         <li>
         	<NavLink exact activeClassName="selected" to="/">
         		<i className="iconfont">&#xe66f;</i>
+        		<span>首页</span>
         	</NavLink>
-        	<span>首页</span>
         </li>
         <li>
         	<NavLink activeClassName="selected" to="/classify">
         		<i className="iconfont">&#xe502;</i>
+        		<span>分类列表</span>
         	</NavLink>
-        	<span>分类列表</span>
         </li>
         <li>
         	<NavLink activeClassName="selected" to="/community">
         		<i className="iconfont">&#xe88c;</i>
+        		<span>社区</span>
         	</NavLink>
-        	<span>社区</span>
         </li>
         <li>
         	<NavLink activeClassName="selected" to="/my">
         		<i className="iconfont">&#xe60d;</i>
+        		<span>我的</span>
         	</NavLink>
-        	<span>我的</span>
         </li>
       </ul>
     </div>

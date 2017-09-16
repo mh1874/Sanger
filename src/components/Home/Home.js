@@ -8,7 +8,6 @@ import { Carousel } from 'antd';
 //引入betterScroll
 import BScroll from 'better-scroll'
 
-
 class Home extends React.Component {
 	constructor() {
 		super();//调用父类构造器
@@ -18,7 +17,7 @@ class Home extends React.Component {
 		 fetch("/api/getdataMenu").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-		 	//console.log(data);
+		 	console.log(data);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
 		 	})
@@ -30,49 +29,62 @@ class Home extends React.Component {
 		 	this.setState({ //让页面上数据更新
 		 		swiper: data
 		 	})
+		 }).then(() => {
+		 	setTimeout(() => {
+		 		this._initScroll();
+		 	},0)
 		 })
+	}
+	_initScroll() {
+		new BScroll(this.refs.homeWrapper, {
+			click: true,
+			bounce: true
+		})
 	}
 	render() {
 		return (
-			<div className="home">
-
-					<Header />
-					<div className="section">
-					<Carousel autoplay={4000}>
-						{
-							this.state.swiper.map((item,index)=>{
-								return <div key={"xx"+index} className="swiperImg">
-											<img src={item.src} />
-									   </div>
-							})
-						}
-					</Carousel>
-					<div className="menu">
-						<ul>
-							{
-								this.state.list.map((item, index) => {
-									return <li key={item._id}>
-												<div><img src={item.src} /></div>
-												<span>{item.name}</span>
-											</li>
-								})
-							}
-						</ul>
-					</div>
-						<ul className="home-ul">
-							{
-								this.state.list.map((item, index) => {
-									return <li key={item._id}>
-												<img src={item.src} />
-												<span>{item.name}</span>
-												<Link to={"/detail/" + item.name}>详情页</Link>
-											</li>
-								})
-							}
-						</ul>
-					</div>
-				<Footer />
-			</div>
+				<div id="homeMain" >
+					<div className="home">
+						<Header />
+							<div className="section" ref="homeWrapper">
+								<div className="homeWrapper">	
+									<Carousel autoplay={4000}>
+									    {
+											this.state.swiper.map((item,index)=>{
+												return <div key={"xx"+index} className="swiperImg">
+															<img src={item.src} />
+													   </div>
+											})
+										}
+									</Carousel>
+									<div className="menu">
+										<ul>
+											{
+												this.state.list.map((item, index) => {
+													return <li key={item._id}>
+																<div><img src={item.src} /></div>
+																<span>{item.name}</span>
+															</li>
+												})
+											}
+										</ul>
+									</div>
+									<ul className="home-ul">
+										{
+											this.state.list.map((item, index) => {
+												return <li key={item._id}>
+														<img src={item.src} alt="item.name"/>
+														<span>{item.name}</span>
+														<Link to={"/detail/" + item.name}>详情页</Link>
+													</li>
+											})
+										}
+									</ul>
+								</div>
+							</div>
+					<Footer />
+				</div>
+			</div>	
 		);
 	}
 }

@@ -15,7 +15,7 @@ import './styles/community/community.css';
 import './styles/my/my.css';
 
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+//import registerServiceWorker from './registerServiceWorker';
 
 //import { createStore,combineReducers } from 'redux';
 //import {Provider} from 'react-redux';
