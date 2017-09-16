@@ -9,7 +9,11 @@ class DetailList extends React.Component {
 		return (
 			<div className="Details">
 				<HeaderList />
-				你好
+				<div className="detail_box">
+					<span className="detail_car">
+						<i className="iconfont">&#xe501;</i>
+					</span>
+				</div>
 				<FooterList />
 			</div>
 		);

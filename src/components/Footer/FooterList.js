@@ -7,6 +7,7 @@ class FooterList extends React.Component {
 		return (
 			<div className="FooterList">
 		      	<div>加入购物车</div>
+		      	<span>$0.00</span>
 		    </div>
 		);
 	}
