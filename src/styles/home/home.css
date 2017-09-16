@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-.home {
-  display: flex;
-  flex-direction: column;
-  height: 100%; }
-  .home .section {
-    flex: 1;
-    overflow: hidden; }
-  .home .menu {
-    width: 100%;
-    height: 85px;
-    border-bottom: 1px solid #666; }
-    .home .menu ul {
-=======
 #homeMain {
   width: 100%;
   height: 100%; }
@@ -24,7 +10,6 @@
       flex: 1;
       overflow-y: auto; }
     #homeMain .home .menu {
->>>>>>> f14e3034dc6321b1f853790d1d22a219476a98fd
       width: 100%;
       height: 85px;
       border-bottom: 1px solid #666; }
