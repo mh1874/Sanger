@@ -60,9 +60,7 @@ export default class Classify extends React.Component {
 					<Header />
 					<div className="classifyWrapper" ref="classifyWrapper">
 						<ul className="classify-ul">
-							<Link to="../DetailList/DetailList">
-								<li>蛋糕</li>
-							</Link>
+							<li>蛋糕</li>
 							<li onClick={this.addIce}>冰淇淋</li>
 							<li onClick={this.addCake}>咖啡</li>
 							<li>设计师礼品</li>
@@ -71,17 +69,19 @@ export default class Classify extends React.Component {
 					</div>	
 					<div className="container">
 						<ul>
-							{
-								this.state.list.map((item,index)=>{
-									return <li key={"xxx" + index}>
-												<img src={item.headImg} />
-												<div>
-													<h2>{item.englishName}</h2>
-													<h2>{item.chineseName}</h2>
-												</div>
-										   </li>
-								})
-							}
+							<Link to="../DetailList/DetailList">
+								{
+									this.state.list.map((item,index)=>{
+										return <li key={"xxx" + index}>
+													<img src={item.headImg} />
+													<div>
+														<h2>{item.englishName}</h2>
+														<h2>{item.chineseName}</h2>
+													</div>
+											   </li>
+									})
+								}
+							</Link>
 						</ul>
 					</div>
 
