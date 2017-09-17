@@ -48,7 +48,7 @@ export default class Classify extends React.Component {
 		fetch("/api/getdataGood").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-		 	console.log(data);
+		 	console.log(data.price);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
 		 	})
@@ -70,14 +70,24 @@ export default class Classify extends React.Component {
 						</ul>
 					</div>	
 					<div className="container">
+						<span className="detail_car">
+							<i className="iconfont">&#xe501;</i>
+						</span>
 						<ul>
 							{
 								this.state.list.map((item,index)=>{
-									return <li key={"xxx" + index}>
+									return <li key={item._id}>
 												<img src={item.headImg} />
 												<div>
 													<h2>{item.englishName}</h2>
 													<h2>{item.chineseName}</h2>
+													<p>{item.distribution}</p>
+													<div className="bottom">
+														<div className="price">¥198.00</div>
+														<div className="shoppingCart">
+															<i className="iconfont">&#xe501;</i>
+														</div>
+													</div>
 												</div>
 										   </li>
 								})
