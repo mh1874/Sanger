@@ -12,6 +12,7 @@ import DetailSingle from './components/Detail/DetailSingle.js'
 import Cake from './components/Classify/cake.js'
 import DetailList from './components/DetailList/DetailList.js'
 
+
 const App = () => (
   <Router>
     <div>
