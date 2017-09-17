@@ -17,7 +17,7 @@ class Home extends React.Component {
 		 fetch("/api/getdataMenu").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-		 	console.log(data);
+		 	console.log(data[0].src);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
 		 	})
@@ -25,13 +25,14 @@ class Home extends React.Component {
 		 fetch("/api/getdataSwiper").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-		 	console.log(data);
+//		 	console.log(data);
 		 	this.setState({ //让页面上数据更新
 		 		swiper: data
 		 	})
 		 }).then(() => {
 		 	setTimeout(() => {
 		 		this._initScroll();
+		 		this._billboardScroll();
 		 	},0)
 		 })
 	}
@@ -41,51 +42,64 @@ class Home extends React.Component {
 			bounce: true
 		})
 	}
+	_billboardScroll() {
+		new BScroll(this.refs.billboardWrapper, {
+			click: true,
+			scrollX: true
+		})
+	}
 	render() {
 		return (
-				<div id="homeMain" >
-					<div className="home">
-						<Header />
-							<div className="section" ref="homeWrapper">
-								<div className="homeWrapper">	
-									<Carousel autoplay={4000}>
-									    {
-											this.state.swiper.map((item,index)=>{
-												return <div key={"xx"+index} className="swiperImg">
-															<img src={item.src} />
-													   </div>
-											})
-										}
-									</Carousel>
-									<div className="menu">
-										<ul>
-											{
-												this.state.list.map((item, index) => {
-													return <li key={item._id}>
-																<div><img src={item.src} /></div>
-																<span>{item.name}</span>
-															</li>
-												})
-											}
-										</ul>
-									</div>
+			<div id="homeMain" >
+				<div className="home">
+					<Header />
+					<div className="section" ref="homeWrapper">
+						<div className="homeWrapper">
+							<Carousel autoplay>
+								{
+									this.state.swiper.map((item, index) => {
+										return <li key={item._id}>
+												<img src={item.src} alt={item.name}/>
+											</li>
+									})
+								}
+							</Carousel>
+							<div className="menu">
+								<ul>
+									{
+										this.state.list.map((item, index) => {
+											return <li key={item._id}>
+														<div><img src={item.src} /></div>
+														<span>{item.name}</span>
+													</li>
+										})
+									}
+								</ul>
+							</div>
+							<div className="fill"></div>
+							<div className="title_billboard">
+								<p >廿一客·榜单</p>
+								<div className="billboardWrapper" ref="billboardWrapper">
 									<ul className="home-ul">
 										{
 											this.state.list.map((item, index) => {
-												return <li key={item._id}>
-														<img src={item.src} alt="item.name"/>
-														<span>{item.name}</span>
-														<Link to={"/detail/" + item.name}>详情页</Link>
-													</li>
+												return <li key={item._id} >
+															<Link to={"/DetailSingle/" + item._id}>
+																<img src={item.src} alt="item.name"/>
+															</Link>
+														</li>
 											})
 										}
 									</ul>
 								</div>
 							</div>
-					<Footer />
-				</div>
-			</div>	
-		);
+							<div className="fill"></div>
+						</div>
+					</div>
+  					<Footer />
+  				</div>
+  			</div>
+  		);
 	}
 }
 
