@@ -74,7 +74,7 @@ export default class Classify extends React.Component {
 							{
 								this.state.list.map((item,index)=>{
 									return <li key={"xxx" + index}>
-												<img src={item.headImg} />
+												<img src={item.headImg} alt={item.chineseName}/>
 												<div>
 													<h2>{item.englishName}</h2>
 													<h2>{item.chineseName}</h2>

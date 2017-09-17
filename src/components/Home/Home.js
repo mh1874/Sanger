@@ -11,13 +11,16 @@ import BScroll from 'better-scroll'
 class Home extends React.Component {
 	constructor() {
 		super();//调用父类构造器
-		this.state = {list: [],swiper : []};
+		this.state = {
+			list: [],
+			swiper : [],
+			newGoods: []
+		};
 	}
 	componentDidMount() {
 		 fetch("/api/getdataMenu").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-		 	console.log(data[0].src);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
 		 	})
@@ -25,7 +28,6 @@ class Home extends React.Component {
 		 fetch("/api/getdataSwiper").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-//		 	console.log(data);
 		 	this.setState({ //让页面上数据更新
 		 		swiper: data
 		 	})
@@ -34,7 +36,14 @@ class Home extends React.Component {
 		 		this._initScroll();
 		 		this._billboardScroll();
 		 	},0)
-		 })
+		 });
+		 fetch("/api/getdataGood").then((res) => {
+		 	return res.json();
+		 }).then((data)=>{
+		 	this.setState({ //让页面上数据更新
+		 		newGoods: data
+		 	})
+		 });
 	}
 	_initScroll() {
 		new BScroll(this.refs.homeWrapper, {
@@ -69,7 +78,7 @@ class Home extends React.Component {
 									{
 										this.state.list.map((item, index) => {
 											return <li key={item._id}>
-														<div><img src={item.src} /></div>
+														<div><img src={item.src} alt={item.name}/></div>
 														<span>{item.name}</span>
 													</li>
 										})
@@ -78,15 +87,22 @@ class Home extends React.Component {
 							</div>
 							<div className="fill"></div>
 							<div className="title_billboard">
-								<p >廿一客·榜单</p>
+								<p >廿一客·新品</p>
+								<Link to={"/DetailSingle/"} className="titleImg">
+									<img src="http://static.21cake.com//upload/images/5b6e03957eea42c2b804581bab62d833.jpg" alt="mongo"/>
+								</Link>
 								<div className="billboardWrapper" ref="billboardWrapper">
 									<ul className="home-ul">
 										{
-											this.state.list.map((item, index) => {
+											this.state.newGoods.map((item, index) => {
 												return <li key={item._id} >
-															<Link to={"/DetailSingle/" + item._id}>
-																<img src={item.src} alt="item.name"/>
-															</Link>
+															<div className="goods-list">
+																<Link to={"/DetailSingle/" + item._id}>
+																	<img src={item.headImg} alt={item.chineseName}/>
+																	<h2>{item.chineseName}</h2>
+																	<p>{item.introduce}</p>
+																</Link>
+															</div>
 														</li>
 											})
 										}
