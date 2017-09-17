@@ -17,7 +17,7 @@ class Home extends React.Component {
 		 fetch("/api/getdataMenu").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-//		 	console.log(data);
+		 	console.log(data[0].src);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
 		 	})
@@ -32,6 +32,7 @@ class Home extends React.Component {
 		 }).then(() => {
 		 	setTimeout(() => {
 		 		this._initScroll();
+		 		this._billboardScroll();
 		 	},0)
 		 })
 	}
@@ -41,95 +42,64 @@ class Home extends React.Component {
 			bounce: true
 		})
 	}
+	_billboardScroll() {
+		new BScroll(this.refs.billboardWrapper, {
+			click: true,
+			scrollX: true
+		})
+	}
 	render() {
 		return (
-<<<<<<< HEAD
-				<div id="homeMain" >
-					<div className="home">
-						<Header />
-							<div className="section" ref="homeWrapper">
-								<div className="homeWrapper">	
-									<Carousel autoplay>
-									    {
-											this.state.swiper.map((item,index)=>{
-												return <div key={item._id} className="swiperImg">
-															<img src={item.src} alt={item.name}/>
-													   </div>
-											})
-										}
-									</Carousel>
-									<div className="menu">
-										<ul>
-											{
-												this.state.list.map((item, index) => {
-													return <li key={item._id}>
-																<div><img src={item.src} alt={item.name}/></div>
-																<span>{item.name}</span>
-															</li>
-												})
-											}
-										</ul>
-									</div>
-									<ul className="home-ul">
-										{
-											this.state.list.map((item, index) => {
-												return <li key={item._id}>
-														<img src={item.src} alt={item.name}/>
-														<span>{item.name}</span>
-														<Link to={"/detail/" + item.name}>详情页</Link>
-													</li>
-											})
-										}
-									</ul>
-								</div>
-=======
 			<div id="homeMain" >
 				<div className="home">
 					<Header />
 					<div className="section" ref="homeWrapper">
-						<div className="homeWrapper">	
-							<Carousel autoplay={4000}>
-							    <div><h3>1</h3></div>
-							    <div><h3>2</h3></div>
-							</Carousel>
-							<div className="menu">
-								<ul>
-									<li>
-										<div>1</div>
-										<span>蛋糕</span>
-									</li>
-									<li>
-										<div>2</div>
-										<span>冰淇淋</span>
-									</li>
-									<li>
-										<div>3</div>
-										<span>咖啡</span>
-									</li>
-										<li>
-										<div>4</div>
-										<span>企业专区</span>
-									</li>
-								</ul>
->>>>>>> 1fcf4726165c6dcc04973c9161800f1cac5f6ec4
-							</div>
-							<ul className="home-ul">
+						<div className="homeWrapper">
+							<Carousel autoplay>
 								{
-									this.state.list.map((item, index) => {
+									this.state.swiper.map((item, index) => {
 										return <li key={item._id}>
-												<img src={item.src} alt="item.name"/>
-												<span>{item.name}</span>
-												<Link to={"/detail/" + item.name}>详情页</Link>
+												<img src={item.src} alt={item.name}/>
 											</li>
 									})
 								}
-							</ul>
+							</Carousel>
+							<div className="menu">
+								<ul>
+									{
+										this.state.list.map((item, index) => {
+											return <li key={item._id}>
+														<div><img src={item.src} /></div>
+														<span>{item.name}</span>
+													</li>
+										})
+									}
+								</ul>
+							</div>
+							<div className="fill"></div>
+							<div className="title_billboard">
+								<p >廿一客·榜单</p>
+								<div className="billboardWrapper" ref="billboardWrapper">
+									<ul className="home-ul">
+										{
+											this.state.list.map((item, index) => {
+												return <li key={item._id} >
+															<Link to={"/DetailSingle/" + item._id}>
+																<img src={item.src} alt="item.name"/>
+															</Link>
+														</li>
+											})
+										}
+									</ul>
+								</div>
+							</div>
+							<div className="fill"></div>
 						</div>
 					</div>
-					<Footer />
-				</div>
-			</div>	
-		);
+  					<Footer />
+  				</div>
+  			</div>
+  		);
 	}
 }
 
