@@ -13,7 +13,7 @@ export default class Classify extends React.Component {
 		this.state = {list: []};
 		this.addIce = this.addIce.bind(this)
 		this.addCoffee = this.addCoffee.bind(this)
-		this.addCoake = this.addCake.bind(this)
+		this.addCake = this.addCake.bind(this)
 	}
 	componentDidMount() {
 		this._menuScroll();
@@ -64,7 +64,7 @@ export default class Classify extends React.Component {
 								<li>蛋糕</li>
 							</Link>
 							<li onClick={this.addIce}>冰淇淋</li>
-							<li>咖啡</li>
+							<li onClick={this.addCake}>咖啡</li>
 							<li>设计师礼品</li>
 		        			<li>企业专区</li>
 						</ul>
