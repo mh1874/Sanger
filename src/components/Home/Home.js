@@ -17,7 +17,7 @@ class Home extends React.Component {
 		 fetch("/api/getdataMenu").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-//		 	console.log(data);
+		 	console.log(data[0].src);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
 		 	})
@@ -32,6 +32,7 @@ class Home extends React.Component {
 		 }).then(() => {
 		 	setTimeout(() => {
 		 		this._initScroll();
+		 		this._billboardScroll();
 		 	},0)
 		 })
 	}
@@ -39,6 +40,12 @@ class Home extends React.Component {
 		new BScroll(this.refs.homeWrapper, {
 			click: true,
 			bounce: true
+		})
+	}
+	_billboardScroll() {
+		new BScroll(this.refs.billboardWrapper, {
+			click: true,
+			scrollX: true
 		})
 	}
 	render() {
@@ -69,17 +76,24 @@ class Home extends React.Component {
 									}
 								</ul>
 							</div>
-							<ul className="home-ul">
-								{
-									this.state.list.map((item, index) => {
-										return <li key={item._id}>
-													<img src={item.src} alt="item.name"/>
-													<span>{item.name}</span>
-													<Link to={"/detail/" + item.name}>详情页</Link>
-												</li>
-									})
-								}
-							</ul>
+							<div className="fill"></div>
+							<div className="title_billboard">
+								<p >廿一客·榜单</p>
+								<div className="billboardWrapper" ref="billboardWrapper">
+									<ul className="home-ul">
+										{
+											this.state.list.map((item, index) => {
+												return <li key={item._id} >
+															<Link to={"/DetailSingle/" + item._id}>
+																<img src={item.src} alt="item.name"/>
+															</Link>
+														</li>
+											})
+										}
+									</ul>
+								</div>
+							</div>
+							<div className="fill"></div>
 						</div>
 					</div>
   					<Footer />
