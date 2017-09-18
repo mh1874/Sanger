@@ -1,4 +1,4 @@
-import React from 'react'
+port React from 'react'
 export default class Cake extends React.Component {
 	constructor(){
 		super();
