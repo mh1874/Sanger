@@ -124,13 +124,13 @@ class DetailList extends React.Component {
 //		console.log(sweetNum)
 		return (
 			<div className="Details">
+				<div className="headerList">
+			      	<Link className="header_btn" to="../Classify/Classify">
+			       		<span>&lt;</span>
+			     	</Link>
+			     	<p>{this.state.List_detail.chineseName}</p>
+			    </div>
 				<div className="detail_box">
-					<div className="headerList">
-				      	<Link className="header_btn" to="../Classify/Classify">
-				       		<span>&lt;</span>
-				     	</Link>
-				     	<p>{this.state.List_detail.chineseName}</p>
-				    </div>
 					<span className="detail_car">
 						<i className="iconfont">&#xe501;</i>
 					</span>
