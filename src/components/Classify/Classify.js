@@ -75,7 +75,7 @@ export default class Classify extends React.Component {
 								{
 									this.state.list.map((item,index)=>{
 										return <li key={item._id}>
-													<Link to="../DetailList/DetailList">
+													<Link to={"/DetailList/" + item._id}>
 														<img src={item.headImg} />
 														<div className="intr">
 															<h2>{item.englishName}</h2>

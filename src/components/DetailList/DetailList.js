@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderList from '../Header/HeaderList.js';
+//import HeaderList from '../Header/HeaderList.js';
 import FooterList from '../Footer/FooterList.js';
 import {Link} from 'react-router-dom';
 
@@ -8,35 +8,53 @@ class DetailList extends React.Component {
 	constructor(){
 		super();   //调用父类构造器
 		this.state = {List_detail : [] };
+		this.transmit = this.transmit.bind(this)
+		this.transmit()
 	}
 	
 	//传入的id值比较，获取所点击的商品的详情页信息
-	componentDidMount(){
+	transmit(){
 		fetch("/api/getdataGood").then((res) =>{
 			return res.json()
 		}).then((data)=>{
-			console.log(data[0])
-			this.setState({   //让页面上数据更新
-		 		List_detail: data[0]
-		 	})
+			setTimeout(() => {
+				for (var i =0; i<data.length; i++ ) {
+					if (data[i]._id === this.props.match.params.id) {
+						data = data[i]
+					}
+				}
+				console.log(data)
+				this.setState({   //让页面上数据更新
+			 		List_detail: data
+			 	})
+			},0)
 		})
+		
 	}
 	//商品列表详情页模板
 	render() {
+		console.log(this.state.List_detail._id)
 		return (
 			<div className="Details">
-				<HeaderList />
 				<div className="detail_box">
+					<div className="headerList">
+				      	<Link className="header_btn" to="../Classify/Classify">
+				       		<span>返回</span>
+				     	</Link>
+				     	<p>{this.state.List_detail.chineseName}</p>
+				    </div>
 					<span className="detail_car">
 						<i className="iconfont">&#xe501;</i>
 					</span>
 					<div className="detail_src">
-						图片
+						<img className="detail_src2" src={this.state.List_detail.headImg} />
 					</div>
 					<div className="detail_int">
-						<h4>Gelato 10</h4>
-						<p>多口味组合(4种搭配)</p>
-						<span>冰淇淋</span>
+						<h4>{this.state.List_detail.englishName}</h4>
+						<p>{this.state.List_detail.chineseName}</p>
+						<ul>
+							
+						</ul>
 					</div>
 					<div className="detail_num">
 						<span>规格数量选择</span>
