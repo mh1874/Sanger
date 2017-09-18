@@ -1,4 +1,4 @@
-import React from 'react'
+port React from 'react'
 export default class Cake extends React.Component {
 	constructor(){
 		super();
@@ -20,7 +20,7 @@ export default class Cake extends React.Component {
 				{
 					this.state.list.map((item,index)=>{
 						return <li key={"xxx" + index}>
-									<img src={item.headImg} alt={item.chineseName}/>
+									<img src={item.headImg} />
 									<div>
 										<h2>{item.englishName}</h2>
 										<h2>{item.chineseName}</h2>
