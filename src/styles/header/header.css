@@ -6,5 +6,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center; }
-    .header .header-ul .header-position i {
-      font-size: 16px; }
+    .header .header-ul .header-position {
+      display: flex; }
+      .header .header-ul .header-position i {
+        font-size: 16px; }
+      .header .header-ul .header-position span {
+        width: 45px;
+        height: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 15px; }

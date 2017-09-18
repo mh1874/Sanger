@@ -7,8 +7,16 @@
         justify-content: space-around;
         align-items: center;
         .header-position {
+            display: flex;
             i {
                 font-size: 16px;
+            }
+            span {
+                width: 45px;
+                height: 15px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 15px;
             }
         }
     }

@@ -1,30 +1,34 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import jsonp from 'jsonp'
+
 
 class Header extends React.Component {
 	constructor() {
 		super();
 		this.geolocation = this.geolocation.bind(this);
 		this.state = {
-			yourPosition: []
+			yourPosition: ""
 		}
 		this.geolocation();
 	}
 	componentDidMount() {
+//		var map = new window.BMap.Map("position")
+//		console.log(map)
 	}
 	geolocation() {
-		//未实现定位 疑问在有经纬度 但不能拿到地理位置
 		if(navigator.geolocation){
 			navigator.geolocation.getCurrentPosition((position) => {
-				let url = `/v2/?callback=renderReverse&location=${position.coords.longitude},${position.coords.latitude}&output=json&pois=1&ak=09BMikHzasSofh3i3gXSENEwDvSVkQQ2`;
-				fetch(url).then((res) => {
-					console.log(res)
-//				 	return res.json();
-				 }).then((data)=>{
-//				 	this.setState({ //让页面上数据更新
-//				 		yourPosition: data
-//				 	})
-				 })
+				var url = `http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=${position.coords.latitude},${position.coords.longitude}&output=json&pois=1&ak=09BMikHzasSofh3i3gXSENEwDvSVkQQ2`;
+				jsonp(url, null, (err, data) => {
+					if (err) {
+					    console.error(err.message);
+					  } else {
+					    this.setState({ //让页面上数据更新
+					 		yourPosition: data["result"]["formatted_address"]
+					 	}) 			
+					  }
+				})
 			});
 		}	
 	}
@@ -40,7 +44,7 @@ class Header extends React.Component {
 		        </li>
 		        <li className="header-position">
 		        	<i className="iconfont">&#xe6fc;</i>
-		        	<span className="position"></span>
+		        	<span id="position">{this.state.yourPosition}</span>
 		        </li>
 		      </ul>
 		    </div>
