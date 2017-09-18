@@ -7,7 +7,13 @@ import {Link} from 'react-router-dom';
 class DetailList extends React.Component {
 	constructor(){
 		super();   //调用父类构造器
-		this.state = {List_detail : [] };
+		this.state = {
+			List_detail : [] ,
+			List_detail_label : [],
+			List_detail_details :[],
+			List_detail_detailsImg : [],
+			List_detail_sweetNum : ''
+		};
 		this.transmit = this.transmit.bind(this)
 		this.transmit()
 	}
@@ -25,11 +31,22 @@ class DetailList extends React.Component {
 				}
 				console.log(data)
 				this.setState({   //让页面上数据更新
-			 		List_detail: data
+			 		List_detail: data,
+			 		List_detail_label : data.label,
+			 		List_detail_details : data.details,
+			 		List_detail_detailsImg : data.detailsImg,
+			 		List_detail_sweetNum : data.sweetNum
 			 	})
+				return data;
 			},0)
+			
 		})
-		
+	}
+	sweet(){
+		var sweets = document.getElementsByClassName("sweets");
+		for (var i = 0; i < this.state.List_detail_sweetNum; i ++) {
+			
+		}
 	}
 	//商品列表详情页模板
 	render() {
@@ -47,13 +64,19 @@ class DetailList extends React.Component {
 						<i className="iconfont">&#xe501;</i>
 					</span>
 					<div className="detail_src">
-						<img className="detail_src2" src={this.state.List_detail.headImg} />
+						<img className="detail_src2" src={this.state.List_detail.headImg} alt={this.state.List_detail.chineseName} />
 					</div>
 					<div className="detail_int">
 						<h4>{this.state.List_detail.englishName}</h4>
 						<p>{this.state.List_detail.chineseName}</p>
 						<ul>
-							
+							{
+								this.state.List_detail_label.map((item,index) => {
+									return <li key={"xx_" + index}>
+												{item}
+											</li>
+								})
+							}
 						</ul>
 					</div>
 					<div className="detail_num">
@@ -64,7 +87,7 @@ class DetailList extends React.Component {
 						<p>
 							<i className="iconfont">&#xe634;</i>
 							<span>参考甜度</span>
-							<span>
+							<span className="sweets"> 
 								<i className="iconfont">&#xe634;</i>
 								<i className="iconfont">&#xe634;</i>
 								<i className="iconfont">&#xe634;</i>
@@ -76,7 +99,7 @@ class DetailList extends React.Component {
 							<i className="iconfont">&#xe60b;</i>
 							<span>配送时间</span>
 							<span>
-								想在订购最早明天9:30起送 .最晚起送时间是22:00.
+								{this.state.List_detail.distribution}
 							</span>
 						</p>
 						<p>
@@ -88,11 +111,22 @@ class DetailList extends React.Component {
 						</p>
 					</div>
 					<div className="detail_ad">
-						<p>/不使用罐头水果和植混奶油/</p>
-						<p>/坚持应季凯特鲜切芒果/</p>
+						{
+							this.state.List_detail_details.map((item,index) => {
+								return <p key={"aa" + index}>
+										{item}
+									</p>
+							})
+						}
 					</div>
 					<div className="detail_adimg">
-						介绍图片
+						{
+							this.state.List_detail_detailsImg.map((item,index) => {
+								return <div key={"bb" + index}>
+										<img src={item} alt={"bb" + index} />
+									</div>
+							})
+						}
 					</div>
 				</div>
 				<FooterList />
