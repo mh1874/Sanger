@@ -25,7 +25,7 @@ export default class Classify extends React.Component {
 		})
 	}
 	addIce(){
-		fetch("/api/getdataGood").then((res) => {
+		fetch("/api/getdataAaa").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
 		 	console.log(data);
@@ -65,8 +65,8 @@ export default class Classify extends React.Component {
 							</Link>
 							<li onClick={this.addIce}>冰淇淋</li>
 							<li onClick={this.addCake}>咖啡</li>
-							<li>设计师礼品</li>
-		        			<li>企业专区</li>
+							<li onClick={this.addIce}>设计师礼品</li>
+		        			<li onClick={this.addCake}>企业专区</li>
 						</ul>
 					</div>	
 					<div className="container">
