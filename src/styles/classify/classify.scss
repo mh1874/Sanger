@@ -3,17 +3,18 @@
     flex-direction: column;
     height: 100%;
     .classifyWrapper {
-        height: 48px;
+        height: 0.48rem;
         overflow: hidden;
         .classify-ul {
-            line-height: 48px;
-            height: 48px;
-            width: 500px;
+            line-height: 0.48rem;
+            height: 0.48rem;
+            width: 5rem;
             li {
                 float: left;
-                width: 104px;
+                width: 1.04rem;
                 height: 100%;
                 text-align: center;
+                font-size: .16rem;
             }
         }
     }
@@ -21,67 +22,105 @@
         flex: 1;
         overflow: hidden;
         overflow-y: auto;
+        .loading{
+            width: 20%;
+            height : .3rem;
+            margin: 0 auto;
+            text-align: center;
+        }
         .detail_car{
             display: flex;
             justify-content: center;
             align-items: center;
             position: fixed;
-            left: 30px;
-            bottom: 85px;
-            width: 62px;
-            height: 62px;
-            border-radius: 31px;
+            left: .3rem;
+            bottom: .85rem;
+            width: .62rem;
+            height: .62rem;
+            border-radius: .31rem;
             background: rgba(0,0,0,0.4);
             .iconfont{
-                font-size: 26px;
+                font-size: .26rem;
                 color: #fff;
             }
         }
+        .headerWorld_cake{
+            height : .4rem;
+            width: 100%;
+            background: #fbf9f6;
+            display: none;
+            p:first-child{
+                height : .24rem;
+                text-align: center;
+                line-height: .24rem;
+                font-weight: 600;
+                color: #442818;
+                font-size: .14rem;
+            }
+            p:nth-child(2){
+                height : .16rem;
+                text-align: center;
+                line-height: .13rem;
+                font-size: .12rem;
+                color: #e6d9ca;
+            }
+        }
         ul{
-            margin-top: 10px;
             li{
                 width: 42%;
-                height : 250px;
+                height : 2.4rem;
                 float : left;
-                margin-left: 10px;
+                margin-left: .1rem;
                 img{
                     width: 100%;
-                    height : 149px;
+                    height : 1.47rem;
                 }
                 a{
                     .intr{
                         width: 100%;
-                        height : 50px;
+                        height : .5rem;
                         h2:first-child{
                             width: 100%;
                             overflow: hidden;
                             text-overflow:ellipsis;
                             white-space: nowrap;
                             font-weight: 600;
-                            font-size: 15px;
-                            margin-bottom: 3px;
+                            font-size: .14rem;
+                            margin-bottom: .03rem;
+                        }
+                        h2:nth-child(2){
+                            width: 100%;
+                            overflow: hidden;
+                            text-overflow:ellipsis;
+                            white-space: nowrap;
+                            font-weight: 600;
+                            font-size: .14rem;
+                            margin-bottom: .03rem;
                         }
                         p{
                             width: 100%;
                             overflow: hidden;
                             text-overflow:ellipsis;
                             white-space: nowrap;
-                            margin-top: 3px;
+                            margin-top: .03rem;
                             color : #ccc;
-                            font-size: 12px;
+                            font-size: .11rem;
                         }
                     }
                 }
                 .bottom{
                     width: 100%;
-                    height : 50px;
+                    height : .4rem;
                     .price{
                         float : left;
-                        width: 50%;
+                        width: 70%;
                         height : 100%;
-                        line-height: 39px;
-                        font-size: 15px;
+                        line-height: .39rem;
+                        font-size: .13rem;
                         color: #ccc;
+                        overflow: hidden;
+                        text-overflow:ellipsis;
+                        white-space: nowrap;
                     }
                     .shoppingCart{
                         float: right;
@@ -92,8 +131,8 @@
                             display: block;
                             width: 100%;
                             height : 100%;
-                            line-height: 40px;
-                            font-size: 19px;
+                            line-height: .4rem;
+                            font-size: .15rem;
                             color: #ccc;
                         }
                         
@@ -101,7 +140,7 @@
                 }
             }
             li:nth-child(even){
-                margin-left: 30px;
+                margin-left: .3rem;
             }
         }
     }

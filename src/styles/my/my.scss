@@ -1,6 +1,9 @@
 .my {
     display: flex;
     flex-direction: column;
+    h1{
+        font-size: .24rem;
+    }
     .container {
         flex: 1;
         background: #7E8C8D;
