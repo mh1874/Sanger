@@ -129,6 +129,7 @@ class DetailList extends React.Component {
 			       		<span>&lt;</span>
 			     	</Link>
 			     	<p>{this.state.List_detail.chineseName}</p>
+			     	<p></p>
 			    </div>
 				<div className="detail_box">
 					<span className="detail_car">
