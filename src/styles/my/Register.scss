@@ -72,9 +72,25 @@
                 }
             }
         }
+        .prompt{
+            width: 80%;
+            height: 0.32rem;
+            margin: 0.05rem auto;
+            position: relative;
+            li{
+                position: absolute;
+                display: none;
+                width: 100%;
+                color: #BD2C00;
+                height: 0.32rem;
+                font-size: 0.12rem;
+                padding-left: 20px;
+                line-height: 0.32rem;
+            }
+        }
         .registers{
             width: 86%;
-            margin: 0.5rem auto 0;
+            margin: 0.05rem auto 0;
             height : .35rem;
             line-height: .35rem;
             font-size: 0.2rem;
