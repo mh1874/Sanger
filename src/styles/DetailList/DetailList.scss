@@ -19,13 +19,13 @@
             border-radius: 31px;
             background: rgba(0,0,0,0.4);
             .iconfont{
-                font-size: 26px;
+                font-size: 0.26rem;
                 color: #fff;
             }
         }
         .detail_src{
             width: 100%;
-            height: 275px;
+            height: 2.75rem;
             border: 1px solid #eee;
             .detail_src2{
                 width: 100%;
@@ -34,29 +34,30 @@
         }
         .detail_int{
             width: 90%;
-            height: 210px;
-            margin: 10px 0 0 10%;
+            height: 2rem;
+            margin: 0.1rem 0 0 8%;
             border-bottom: 1px solid #ccc;
             h4{
-                font-size: 22px;
-                line-height: 36px;
+                font-size: 0.2rem;
+                line-height: 0.36rem;
             }
             p{
-                font-size: 18px;
-                line-height: 30px;
+                font-size: 0.16rem;
+                line-height: 0.3rem;
             }
             ul{
                 width: 100%;
-                height: 30px;
-                margin-top: 10px;
+                height: 0.3rem;
+                margin-top: 0.1rem;
                 li{
-                    height: 26px;
-                    padding: 0 10px;
+                    height: 0.26rem;
+                    padding: 0 0.08rem;
                     float: left;
-                    margin: 0 4px ;
-                    border-radius: 13px;
+                    font-size: 0.14rem;
+                    margin: 0 0.04rem ;
+                    border-radius: 0.13rem;
                     border: 1px solid #d1bda4;
-                    line-height: 24px;
+                    line-height: 0.24rem;
                     text-align: center;
                     color: #d1bda4;
                 }
@@ -64,37 +65,37 @@
         }
         .detail_num{
             width:100%;
-            height: 65px;
+            height: 0.48rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 30px 0 34px;
+            padding: 0 0.3rem 0 0.34rem;
             span{
-                font-size: 20px;
+                font-size: 0.18rem;
             }
         }
         .detail_spec{
             width: 100%;
-            height: 170px;
+            height: 1.6rem;
             border-top: 20px solid #f6f6f6;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            padding: 15px 10% 15px 10%;
+            padding: 0.14rem 8%;
             p{
                 display: flex;
-                font-size: 16px;
+                font-size: 0.12rem;
                 span:nth-of-type(1){
-                   margin: 0 10px 0 10px;
+                   margin: 0.02rem 0.1rem 0 0.1rem;
                 } 
                 span:nth-of-type(2){
                     display: block;
-                    width: 64%;
-                    font-size: 15px;
+                    width: 66%;
+                    font-size: 0.13rem;
                 }    
             }
             p i{
-                font-size: 21px;
+                font-size: 0.2rem;
             }
             p:nth-of-type(1)>i{
                 color: #f1ad86;
@@ -112,8 +113,8 @@
             border-top: 20px solid #f6f6f6;
             padding: 10px 5%;
             p{
-                line-height: 24px;
-                font-size: 14px;
+                line-height: 0.22rem;
+                font-size: 0.12rem;
             }
         }
         .detail_adimg{
@@ -122,11 +123,11 @@
             border-top: 20px solid #f6f6f6;
             div{
                 width: 100%;
-                height: 240px;
+                height: 2.4rem;
                 margin-bottom: 10px;
                 img{
                     width: 100%;
-                    height: 240px;
+                    height: 2.4rem;
                 }
             }
         }

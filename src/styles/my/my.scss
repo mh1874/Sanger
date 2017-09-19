@@ -1,11 +1,116 @@
 .my {
     display: flex;
     flex-direction: column;
-    h1{
-        font-size: .24rem;
-    }
     .container {
         flex: 1;
-        background: #7E8C8D;
+        width: 100%;
+        font-size: .12rem;
+        display: flex;
+        justify-content: center;
+        .content{
+            width: 74%;
+            .headerLogin{
+                width: 100%;
+                height : .43rem;
+                display: flex;
+                span{
+                    display: block;
+                    width: 50%;
+                    height : 100%;
+                    text-align: center;
+                    line-height: .43rem;
+                    border-bottom: 1px solid #5c4335;
+                }
+            }
+            .numberLogin{
+                width: 100%;
+                margin-top: .2rem;
+                height : 1rem;
+                display: none;
+                input{
+                    color: #442818;
+                    width: 100%;
+                    border: none;
+                    border-bottom: 1px solid #D5D5D5;
+                    height: .4rem;
+                    padding: .1rem 0;
+                    line-height: .4rem;
+                    outline: none;
+                    font-size: .12rem;
+                }
+            }
+            .phoneLogin{
+                width: 100%;
+                margin-top: .2rem;
+                height : 1.7rem;
+                input{
+                    width: 100%;
+                    border: none;
+                    border-bottom: 1px solid #D5D5D5;
+                    height: .4rem;
+                    padding: .1rem 0;
+                    line-height: .4rem;
+                    outline: none;
+                    font-size: .12rem;
+                }
+                
+                .SecurityCode{
+                    height : .4rem;
+                    width: 100%;
+                    input{
+                        width: 50%;
+                        height : 100%;
+                    }
+                    #container{
+                        width: 50%;
+                        float: right;
+                        background: red;
+                    }
+                }
+                .getCode{
+                    width: 100%;
+                    height : .4rem;
+                    position: relative;
+                    .getCodeBtn{
+                        width: 50%;
+                        height : .38rem;
+                        position: absolute;
+                        right : 0;
+                        top : 0;
+                        text-align: center;
+                        line-height: .38rem;
+                        font-size: .14rem;
+                        background: #442818;
+                        color: #fff;
+                    }
+                }
+            }
+            .login{
+                width: 100%;
+                height : .35rem;
+                line-height: .35rem;
+                text-align: center;
+                background: #442818;
+                color:#fff;
+                border : 1px solid #79655a;
+            }
+            .footLogin{
+                width: 100%;
+                height : 0.4rem;
+                display: flex;
+                justify-content: space-between;
+                color: #442818;
+                .checkbox{
+                    width: 25%;
+                    height : 100%;
+                    line-height: .4rem;
+                }
+                .toRegister{
+                    width: 46%;
+                    height : 100%;
+                    line-height: .4rem;
+                }
+            }
+        }
     }
 }
