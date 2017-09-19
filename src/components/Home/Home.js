@@ -151,6 +151,7 @@ class Home extends React.Component {
 									</ul>
 								</div>
 								<div className="fill"></div>
+								<h5 className="title">廿一客·中秋节</h5>
 								<Link to={"/DetailSingle/"} className="titleImg">
 									<img src="http://static.21cake.com//upload/images/ab936b72722e8e6e64b746cd08af0f90.jpg" alt="moonCake"/>
 								</Link>
