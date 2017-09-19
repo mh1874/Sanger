@@ -29,7 +29,11 @@ import App from './App';
 //const reducers = combineReducers(AllReducers);
 //store 必要参数是reducers 后面还可以写中间件之类的参数
 //const store = createStore(reducers);
-
+import injectTapEventPlugin from 'react-tap-event-plugin';
+ 
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
 
 
 const renderPage = () => {
