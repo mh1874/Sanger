@@ -13,7 +13,7 @@
     .Details .headerList .header_btn {
       position: absolute;
       left: 0.2rem;
-      top: -0.6rem; }
+      top: 0.1rem; }
       .Details .headerList .header_btn span {
         font-size: 0.18rem; }
     .Details .headerList p {
@@ -95,6 +95,8 @@
           display: block;
           width: 66%;
           font-size: 0.13rem; }
+          .Details .detail_box .detail_spec p span:nth-of-type(2) .active {
+            color: #DF5000; }
       .Details .detail_box .detail_spec p i {
         font-size: 0.2rem; }
       .Details .detail_box .detail_spec p:nth-of-type(1) > i {

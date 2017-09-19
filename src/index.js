@@ -18,7 +18,7 @@ import './styles/my/my.css';
 
 import App from './App';
 //import registerServiceWorker from './registerServiceWorker';
-
+//
 //import { createStore,combineReducers } from 'redux';
 //import {Provider} from 'react-redux';
 //reducers
@@ -37,4 +37,7 @@ const renderPage = () => {
 renderPage();
 //订阅
 //store.subscribe(renderPage);
+
+//registerServiceWorker();
+
 
