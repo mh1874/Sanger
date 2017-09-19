@@ -78,6 +78,7 @@ li {
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
+    display: none;
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -96,7 +97,6 @@ li {
     background-color: rgba(125, 125, 125, 0.7);
     -webkit-border-radius: 6px;
 }
-
 html, body {
     width: 100%;
 }
