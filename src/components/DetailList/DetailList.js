@@ -67,55 +67,6 @@ class DetailList extends React.Component {
 			},0)
 		});
 	}
-	//传入的id值比较，获取所点击的商品的详情页信息
-//		fetch("/api/getdataGood").then((res) =>{
-//			return res.json()
-//		}).then((data)=>{
-//			setTimeout(() => {
-//				for (var i =0; i<data.length; i++ ) {
-//					if (data[i]._id === this.props.match.params.id) {
-//						data = data[i]
-//						console.log(1)
-//					}
-//					else{
-//						console.log(2)
-//						fetch("/api/getdataAaa").then((res) =>{
-//							return res.json()
-//						}).then((data_s)=>{
-//							for (var j =0; j<data_s.length; j++ ){
-//								if (data[j]._id === this.props.match.params.id) {
-//									data = data[j]
-//								}
-//							}
-//						})
-//						console.log(data[0])
-//					}
-//				}
-//				this.setState({   //让页面上数据更新
-//			 		List_detail: data,
-//			 		List_detail_label : data.label,
-//			 		List_detail_details : data.details,
-//			 		List_detail_detailsImg : data.detailsImg,
-//			 		List_detail_sweetNum : data.sweetNum
-//			 })
-//			},0)
-//			
-//		})
-//	}
-	sweet(){
-//		var sweets = document.getElementsByClassName("sweets");
-//		var sweetNum = this.state.List_detail_sweetNum
-//		var icons = []
-//		for (var i = 0; i < sweetNum; i ++) {
-//			icons.push("iconfont active")
-//		}
-//		for (var j = 0; j<(5-sweetNum) ; i++) {
-//			icons.push("iconfont")
-//		}
-//		this.setState({
-//			styleS : icons
-//		})
-	}
 	//商品列表详情页模板
 	render() {
 		console.log(this.state.List_detail_label)
