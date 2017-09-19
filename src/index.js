@@ -15,6 +15,7 @@ import './styles/home/home.css';
 import './styles/classify/classify.css';
 import './styles/community/community.css';
 import './styles/my/my.css';
+import './styles/my/Register.css';
 
 import App from './App';
 //import registerServiceWorker from './registerServiceWorker';
