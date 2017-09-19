@@ -8,7 +8,6 @@ import './styles/reset/reset.css';
 import './styles/footer/footer.css';
 import './styles/footer/FooterList.css';
 import './styles/header/header.css';
-import './styles/header/headerList.css';
 import './styles/DetailList/DetailList.css';
 
 
@@ -16,6 +15,7 @@ import './styles/home/home.css';
 import './styles/classify/classify.css';
 import './styles/community/community.css';
 import './styles/my/my.css';
+import './styles/my/Register.css';
 
 import App from './App';
 //import registerServiceWorker from './registerServiceWorker';
