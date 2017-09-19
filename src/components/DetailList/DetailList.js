@@ -1,5 +1,4 @@
 import React from 'react';
-//import HeaderList from '../Header/HeaderList.js';
 import FooterList from '../Footer/FooterList.js';
 import {Link} from 'react-router-dom';
 
