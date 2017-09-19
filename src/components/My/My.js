@@ -1,8 +1,10 @@
 import React from 'react';
 import Footer from '../Footer/Footer.js';
+import Register from './Register'
 import { Input } from 'antd';
 //引入验证码插件
 import '../../gVerify.js';
+import {Link} from 'react-router-dom';
 
 export default class My extends React.Component {
 	constructor(){
@@ -51,7 +53,9 @@ export default class My extends React.Component {
 							<div className="toRegister">
 								忘记密码
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								去注册
+								<Link to={"./Register"}>
+									去注册
+								</Link>
 							</div>
 						</div>
 					</div>

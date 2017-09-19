@@ -76,8 +76,7 @@ class Home extends React.Component {
 	}
 	_initScroll() {
 		new BScroll(this.refs.homeWrapper, {
-			click: true,
-			bounce: true
+			click: true
 		})
 	}
 	_cakeScroll() {
