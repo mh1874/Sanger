@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../Header/Header.js';
+import Footer from '../Footer/Footer.js';
 import {Link} from 'react-router-dom';
 
 class Articles extends React.Component {
@@ -23,19 +24,18 @@ class Articles extends React.Component {
 		 })
 	}
 	render() {
-		console.log(this.state)
 		return (
 			<div className="articles">
 				<Header />
 				<div className="articles-content">
 					{
 						this.state.newArticles.map((item, index) => {
-							return <div className="articles-item">
+							return <div className="articles-item" key={"youknowwhat" + index}>
 										<h2 className="articles-title">{item.title}</h2>
 										<p className="articles-publish">发布时间:{item.time}</p>
 										{
 											this.state.newArticles[0].articleImg.map((item, index) => {
-												return <img src={item} alt="freedom" key="strander" />
+												return <img src={item} alt="freedom" key={"strander" + index} />
 											})
 										}
 										<Link to={"/classify"} className="toshopping">去购买~~~</Link>
@@ -43,6 +43,7 @@ class Articles extends React.Component {
 						})
 					}
 				</div>
+				<Footer />
 			</div>
 		);
 	}
