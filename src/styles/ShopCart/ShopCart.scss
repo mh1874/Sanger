@@ -55,7 +55,7 @@
                     justify-content: center;
                     .shopInfo{
                         width: 80%;
-                        height : 1.5rem;
+                        height : 1.2rem;
                         margin-top: .2rem;
                         display: flex;
                         img{
@@ -69,12 +69,66 @@
                             font-size: .14rem;
                             h2{
                                 width: 150%;
+                                font-weight: 600;
+                            }
+                            h2:last-child{
+                                margin-top: .1rem;
+                            }
+                            p{
+                                width: 100%;
+                                height : .3rem;
+                                margin-top: .1rem;
                             }
                         }
                         .shopNum{
                             width: 30%;
                             height : 100%;
-                            background: yellow;
+                            position: relative;
+                            .trimNum{
+                                width: 100%;
+                                height : .4rem;
+                                position: absolute;
+                                bottom: 0;
+                                display: flex;
+                                .reduce{
+                                    width: 33%;
+                                    height : 100%;
+                                    font-size: .2rem;
+                                    background: #efefef;
+                                    span{
+                                        display: block;
+                                        width: 100%;
+                                        height : 100%;
+                                        text-align: center;
+                                        line-height: .4rem;
+                                        display: none;
+                                    }
+                                    .iconfont{
+                                        display: block;
+                                        width: 100%;
+                                        height : 100%;
+                                        text-align: center;
+                                        line-height: .4rem;
+                                        font-size: .22rem;
+                                        color : blue;
+                                    }
+                                }
+                                .showShopNum{
+                                    width: 33%;
+                                    height : 100%;
+                                    font-size: .2rem;
+                                    text-align: center;
+                                    line-height: .4rem;
+                                }
+                                .increase{
+                                    width: 33%;
+                                    height : 100%;
+                                    font-size: .2rem;
+                                    text-align: center;
+                                    line-height: .4rem;
+                                    background: #efefef;
+                                }
+                            }
                         }
                     }
                 }

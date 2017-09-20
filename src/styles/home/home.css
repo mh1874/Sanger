@@ -1,5 +1,20 @@
 #homeMain {
   width: 100%; }
+  #homeMain .detail_car {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: .3rem;
+    top: 5rem;
+    width: .56rem;
+    height: .56rem;
+    border-radius: .28rem;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 99; }
+    #homeMain .detail_car .iconfont {
+      font-size: .26rem;
+      color: #fff; }
   #homeMain .home {
     display: flex;
     flex-direction: column; }
@@ -61,21 +76,6 @@
           line-height: .5rem;
           font-size: .15rem;
           color: #442818; }
-        #homeMain .home .section .homeWrapper .detail_car {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: fixed;
-          left: .3rem;
-          bottom: .68rem;
-          width: .56rem;
-          height: .56rem;
-          border-radius: .28rem;
-          background: rgba(0, 0, 0, 0.4);
-          z-index: 99; }
-          #homeMain .home .section .homeWrapper .detail_car .iconfont {
-            font-size: .26rem;
-            color: #fff; }
         #homeMain .home .section .homeWrapper .title_billboard .titleImg img {
           width: 100%;
           height: 1.1rem; }

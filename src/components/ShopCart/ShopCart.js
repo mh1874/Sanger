@@ -8,23 +8,24 @@ import Footer from '../Footer/Footer.js';
 export default class ShopCart extends React.Component {
 	constructor() {
 		super();
-		this.state = {list: {}};
+		this.state = {list: {},price : {}};
 		this.addCake = this.addCake.bind(this);
 	}
 	componentDidMount() {
 		this.addCake();
 	}
-	addCake(){
+	addCake(){ 
 		fetch("/api/getdataGood").then((res) => {
 		 	return res.json();
 		}).then((data)=>{
 		 	this.setState({ //让页面上数据更新
-		 		list: data[0]
+		 		list: data[0],
+		 		price : data[0].price
 		 	},()=>{
 		 		console.log(this.state.list)
+		 		console.log(this.state.price)
 		 	})
 		});
-		console.log(this.state.list)
 	}
 	render() {
 		return (
@@ -51,9 +52,19 @@ export default class ShopCart extends React.Component {
 									<div className="shopName">
 										<h2>{this.state.list.englishName}</h2>
 										<h2>{this.state.list.chineseName}</h2>
+										<p>规格 : {this.state.list.portion}</p>
+										<p>￥{this.state.price.newPrice}</p>
 									</div>
 									<div className="shopNum">
+										<div className="trimNum">
+											<div className="reduce"><span>-</span><i className="iconfont">&#xe631;</i></div>
+											<input type="text" name="" className="showShopNum" value="1"/>
+											<div className="increase">+</div>
+										</div>
 									</div>
+								</div>
+								<div>
+									
 								</div>
 							</li>
 						</ul>
