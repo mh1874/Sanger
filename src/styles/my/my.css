@@ -99,6 +99,9 @@
           width: 27%;
           height: 100%;
           line-height: .4rem; }
+          .my .container .content .footLogin .checkbox input {
+            width: 0.12rem;
+            height: 0.12rem; }
         .my .container .content .footLogin .toRegister {
           width: 46%;
           height: 100%;

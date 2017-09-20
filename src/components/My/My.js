@@ -169,7 +169,9 @@ export default class My extends React.Component {
 						</div>
 						<div className="footLogin">
 							<div className="checkbox">
-								<input type="checkbox" name="rememberMe" checked={this.state.isRemember} onClick={this.handleCheckbox} />记住密码
+								<input type="checkbox" name="rememberMe" checked={this.state.isRemember} onClick={this.handleCheckbox} />
+								&nbsp;&nbsp;
+								记住密码
 							</div>
 							<div className="toRegister">
 								忘记密码
