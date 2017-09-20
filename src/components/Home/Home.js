@@ -131,6 +131,11 @@ class Home extends React.Component {
 									}
 								</ul>
 							</div>
+							<Link to={"/ShopCart"}>  
+								<span className="detail_car">
+									<i className="iconfont">&#xe501;</i>
+								</span>
+							</Link>
 							<div className="fill"></div>
 							<div className="title_billboard">
 								<h5 className="title">廿一客·新品</h5>
