@@ -68,10 +68,12 @@ export default class Classify extends React.Component {
 					<div className="container">
 						<div className="loading" ref="loading">
 						    <Spin size="large" />
-						  </div>
-						<span className="detail_car">
-							<i className="iconfont">&#xe501;</i>
-						</span>
+						</div>
+						<Link to={"/ShopCart"}>  
+							<span className="detail_car">
+								<i className="iconfont">&#xe501;</i>
+							</span>
+						</Link>
 						<div className="headerWorld_cake" ref="cake">
 							<p>蛋糕</p>
 							<p>新鲜乳脂奶油蛋糕</p>

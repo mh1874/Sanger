@@ -7,7 +7,7 @@ import { Form, Icon, Input, Button, Checkbox, message } from 'antd';
 import '../../gVerify.js';
 //引入material-ui
 import RaisedButton from 'material-ui/RaisedButton';
-import Register from './Register'
+
 //引入验证码插件
 import '../../gVerify.js';
 import {Link} from 'react-router-dom';
@@ -42,8 +42,6 @@ export default class My extends React.Component {
 		let uname = e.target.value;
 			this.setState({
 	            userName: uname
-	        },()=>{
-	        	console.log(this.state.userName)
 	        });     
 	}
 	//监听密码输入input中的数据，储存在state中
@@ -51,9 +49,7 @@ export default class My extends React.Component {
 		let upwd = e.target.value;
 		this.setState({
             userPassword: upwd
-        },()=>{
-	        	console.log(this.state.userPassword);
-	    });
+        });
 	}
 	//监听手机输入input中的数据，储存在state中
 	changePhone(e){
@@ -62,9 +58,7 @@ export default class My extends React.Component {
 		if (pattern.test(phone) ){
 			this.setState({
 	            phone: phone
-	        },()=>{
-		        console.log(this.state.phone);
-		    });
+	        });
 		}else{
 			alert("手机号错误！！！")
 		}
@@ -76,15 +70,11 @@ export default class My extends React.Component {
         if(isChecked){
             this.setState({
                 isRemember: true
-            },()=>{
-	        	console.log(this.state.isRemember);
-	    	})
+            })
         }else{
             this.setState({
                 isRemember: false
-            },()=>{
-	        	console.log(this.state.isRemember);
-	    	})
+            })
         }
     }
 	//点击发送验证码
@@ -177,7 +167,7 @@ export default class My extends React.Component {
 								忘记密码
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<Link to={"./Register"}>
-									去注册
+									去注册>	
 								</Link>
 							</div>
 						</div>

@@ -16,6 +16,7 @@ import './styles/classify/classify.css';
 import './styles/community/community.css';
 import './styles/my/my.css';
 import './styles/my/Register.css';
+import './styles/ShopCart/ShopCart.css';
 
 import App from './App';
 //import registerServiceWorker from './registerServiceWorker';
