@@ -85,7 +85,6 @@ class DetailList extends React.Component {
 			},0)
 		})
 	}
-
 	//商品列表详情页模板
 	render() {
 		return (

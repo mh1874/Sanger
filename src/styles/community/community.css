@@ -8,14 +8,67 @@
     text-align: center; }
     .community .community-header h5 {
       font-size: .20rem; }
-  .community .community-container {
-    flex: 1; }
-    .community .community-container .community-title {
+  .community .title-list {
+    height: .46rem; }
+    .community .title-list .community-title {
       width: 100%;
       height: .46rem; }
-      .community .community-container .community-title .title-item {
+      .community .title-list .community-title .title-item {
         width: 50%;
+        height: .46rem;
         float: left;
         font-size: .16rem;
         text-align: center;
         line-height: .46rem; }
+        .community .title-list .community-title .title-item p {
+          width: 100%;
+          height: 100%; }
+  .community .community-container {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    width: 100%; }
+    .community .community-container .community-wrapper {
+      position: absolute;
+      left: .27rem;
+      top: .2rem;
+      width: 3.2rem;
+      height: auto; }
+      .community .community-container .community-wrapper .sanger-ul {
+        width: 100%;
+        margin: .1rem 0;
+        position: absolute;
+        left: 0;
+        transition: all .5s; }
+        .community .community-container .community-wrapper .sanger-ul .community-item {
+          width: 3.2rem; }
+          .community .community-container .community-wrapper .sanger-ul .community-item .custom-image img {
+            width: 100%; }
+          .community .community-container .community-wrapper .sanger-ul .community-item .custom-card {
+            padding: .05rem; }
+            .community .community-container .community-wrapper .sanger-ul .community-item .custom-card h6 {
+              padding: .1rem 0;
+              font-size: .16rem; }
+            .community .community-container .community-wrapper .sanger-ul .community-item .custom-card p {
+              padding: .05rem;
+              font-size: .12rem; }
+      .community .community-container .community-wrapper .treehole-ul {
+        width: 100%;
+        margin: .1rem 0;
+        position: absolute;
+        left: 0;
+        transition: all .5s; }
+        .community .community-container .community-wrapper .treehole-ul .treehole-item {
+          width: 3.2rem; }
+          .community .community-container .community-wrapper .treehole-ul .treehole-item .custom-image img {
+            width: 100%; }
+          .community .community-container .community-wrapper .treehole-ul .treehole-item .custom-card {
+            padding: .05rem; }
+            .community .community-container .community-wrapper .treehole-ul .treehole-item .custom-card h6 {
+              padding: .1rem 0;
+              font-size: .14rem;
+              color: #999999; }
+            .community .community-container .community-wrapper .treehole-ul .treehole-item .custom-card p {
+              padding: .05rem;
+              font-size: .18rem;
+              color: #000; }

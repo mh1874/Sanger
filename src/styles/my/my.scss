@@ -82,13 +82,16 @@
                         top : 0;
                         text-align: center;
                         line-height: .38rem;
-                        font-size: .14rem;
                         color: #fff;
                         .yanCode{
                             background: #442818;
                             width: 100%;
                             height : 100%;
                             color : #fff;
+                            font-size: .12rem;
+                            .time{
+                                display: none;
+                            }
                         }
                     }
                 }
@@ -112,11 +115,18 @@
                     width: 27%;
                     height : 100%;
                     line-height: .4rem;
+                    input{
+                        width: 0.12rem;
+                        height : 0.12rem;
+                    }
                 }
                 .toRegister{
                     width: 46%;
                     height : 100%;
                     line-height: .4rem;
+                    a{
+                        color: #442818;
+                    }
                 }
             }
         }

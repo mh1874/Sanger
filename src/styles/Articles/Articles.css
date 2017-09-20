@@ -1,0 +1,28 @@
+.articles {
+  display: flex;
+  flex-direction: column; }
+  .articles .articles-content {
+    flex: 1;
+    overflow-y: auto; }
+    .articles .articles-content .articles-item .articles-title {
+      padding: .15rem .15rem 0;
+      line-height: .34rem;
+      font-size: .24rem; }
+    .articles .articles-content .articles-item .articles-publish {
+      padding: 0 .15rem;
+      font-size: .12rem;
+      color: #8c8c8c; }
+    .articles .articles-content .articles-item img {
+      width: 3.4rem;
+      margin: .15rem .15rem; }
+    .articles .articles-content .articles-item .toshopping {
+      display: block;
+      width: 1rem;
+      height: .4rem;
+      text-align: center;
+      line-height: .4rem;
+      background: #FFECEC;
+      border: .01rem solid #EAFFEA;
+      border-radius: 50% 50%;
+      margin: .2rem 0 .2rem 2.4rem;
+      font-size: .14rem; }

@@ -1,0 +1,66 @@
+.shoppingCart {
+  display: flex;
+  flex-direction: column; }
+  .shoppingCart .shopCartHead {
+    width: 100%;
+    height: .43rem;
+    text-align: center;
+    line-height: .43rem;
+    font-size: .2rem; }
+  .shoppingCart .shopCartContent {
+    width: 100%;
+    flex: 1;
+    background: #f1f1f1; }
+    .shoppingCart .shopCartContent .nothing {
+      width: 50%;
+      height: 2rem;
+      margin: 0 auto;
+      margin-top: 50%;
+      display: none; }
+      .shoppingCart .shopCartContent .nothing img {
+        width: 100%; }
+      .shoppingCart .shopCartContent .nothing p {
+        width: 100%;
+        height: .3rem;
+        text-align: center;
+        font-size: .13rem;
+        line-height: .3rem;
+        color: #D5BFA7; }
+      .shoppingCart .shopCartContent .nothing p:last-child a {
+        color: #442818; }
+    .shoppingCart .shopCartContent .haveGoods {
+      width: 100%; }
+      .shoppingCart .shopCartContent .haveGoods .seilAvtive {
+        width: 100%;
+        height: .5rem;
+        text-align: center;
+        line-height: .5rem;
+        font-size: .14rem;
+        color: #442818; }
+      .shoppingCart .shopCartContent .haveGoods .shopGoods {
+        width: 100%; }
+        .shoppingCart .shopCartContent .haveGoods .shopGoods li {
+          width: 100%;
+          height: 3rem;
+          background: #fff;
+          display: flex;
+          justify-content: center; }
+          .shoppingCart .shopCartContent .haveGoods .shopGoods li .shopInfo {
+            width: 80%;
+            height: 1.5rem;
+            margin-top: .2rem;
+            display: flex; }
+            .shoppingCart .shopCartContent .haveGoods .shopGoods li .shopInfo img {
+              width: 40%;
+              height: 100%;
+              border: none; }
+            .shoppingCart .shopCartContent .haveGoods .shopGoods li .shopInfo .shopName {
+              width: 30%;
+              height: 100%;
+              font-size: .14rem; }
+              .shoppingCart .shopCartContent .haveGoods .shopGoods li .shopInfo .shopName h2 {
+                width: 150%; }
+            .shoppingCart .shopCartContent .haveGoods .shopGoods li .shopInfo .shopNum {
+              width: 30%;
+              height: 100%;
+              background: yellow; }
