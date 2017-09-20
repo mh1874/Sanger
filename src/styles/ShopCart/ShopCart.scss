@@ -1,0 +1,84 @@
+.shoppingCart{
+    display: flex;
+    flex-direction: column;
+    .shopCartHead{
+        width: 100%;
+        height : .43rem;
+        text-align: center;
+        line-height: .43rem;
+        font-size: .2rem;
+    }
+    .shopCartContent{
+        width: 100%;
+        flex: 1;
+        background: #f1f1f1;
+        .nothing{
+            width: 50%;
+            height : 2rem;
+            margin: 0 auto;
+            margin-top: 50%;
+            display : none;
+            img{
+                width: 100%;
+            }
+            p{
+              width: 100%;
+              height : .3rem;
+              text-align: center;
+              font-size: .13rem;
+              line-height: .3rem; 
+              color: #D5BFA7; 
+            }
+            p:last-child{
+                a{
+                    color: #442818;
+                }
+            }
+        }
+        .haveGoods{
+          width: 100%;
+            .seilAvtive{
+                width: 100%;
+                height : .5rem;
+                text-align: center;
+                line-height: .5rem;
+                font-size: .14rem;
+                color : #442818;
+            }
+            .shopGoods{
+                width: 100%;
+                li{
+                    width: 100%;
+                    height : 3rem;
+                    background: #fff;
+                    display: flex;
+                    justify-content: center;
+                    .shopInfo{
+                        width: 80%;
+                        height : 1.5rem;
+                        margin-top: .2rem;
+                        display: flex;
+                        img{
+                            width: 40%;
+                            height : 100%;
+                            border:none;
+                        }
+                        .shopName{
+                            width: 30%;
+                            height : 100%;
+                            font-size: .14rem;
+                            h2{
+                                width: 150%;
+                            }
+                        }
+                        .shopNum{
+                            width: 30%;
+                            height : 100%;
+                            background: yellow;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

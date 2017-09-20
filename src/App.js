@@ -11,13 +11,17 @@ import My from './components/My/My.js'
 import Register from './components/My/Register.js'
 import DetailSingle from './components/Detail/DetailSingle.js'
 import DetailList from './components/DetailList/DetailList.js'
+
 import Articles from './components/Articles/Articles.js'
+import ShopCart from './components/ShopCart/ShopCart.js'
+
 
 const App = () => (
   <Router>
     <div>
       <Route exact path="/" component={Home}/>
       <Route path="/classify" component={Classify}/>
+      <Route path="/shopCart" component={ShopCart}/>
       <Route path="/community" component={Community}/>
       <Route path="/my" component={My}/>
       <Route path="/register" component={Register}/>

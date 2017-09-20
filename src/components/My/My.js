@@ -7,7 +7,7 @@ import { Form, Icon, Input, Button, Checkbox, message } from 'antd';
 import '../../gVerify.js';
 //引入material-ui
 import RaisedButton from 'material-ui/RaisedButton';
-import Register from './Register'
+
 //引入验证码插件
 import '../../gVerify.js';
 import {Link} from 'react-router-dom';
@@ -15,8 +15,6 @@ import {Link} from 'react-router-dom';
 export default class My extends React.Component {
 	constructor(){
 		super()
-		this.showNum = this.showNum.bind(this);
-		this.showPhone = this.showPhone.bind(this);
 		this.state={
 			userName : "",
 			userPassword : "",
@@ -25,9 +23,15 @@ export default class My extends React.Component {
 			count : 60,
 			liked : true
 		}
+		this.showNum = this.showNum.bind(this);
+		this.showPhone = this.showPhone.bind(this);
 		this.changeName = this.changeName.bind(this);
 		this.changePwd = this.changePwd.bind(this);
-		this.success = this.success.bind(this)
+		this.success = this.success.bind(this);
+		this.changePhone = this.changePhone.bind(this);
+		this.countDown = this.countDown.bind(this);
+		this.load = this.load.bind(this);
+		this.handleCheckbox = this.handleCheckbox.bind(this);
 	}
 	componentDidMount(){
 		var verifyCode = new window.GVerify("container");
@@ -38,8 +42,6 @@ export default class My extends React.Component {
 		let uname = e.target.value;
 			this.setState({
 	            userName: uname
-	        },()=>{
-	        	console.log(this.state.userName)
 	        });     
 	}
 	//监听密码输入input中的数据，储存在state中
@@ -47,47 +49,78 @@ export default class My extends React.Component {
 		let upwd = e.target.value;
 		this.setState({
             userPassword: upwd
-        },()=>{
-	        	console.log(this.state.userPassword);
-	    });
-        console.log(this.state.userPassword);
+        });
 	}
 	//监听手机输入input中的数据，储存在state中
-	
+	changePhone(e){
+		let phone = e.target.value;
+		var pattern = /^(13|14|15|18)[0-9]{9}$/;
+		if (pattern.test(phone) ){
+			this.setState({
+	            phone: phone
+	        });
+		}else{
+			alert("手机号错误！！！")
+		}
+		
+	}
 	//是否记住密码
 	handleCheckbox(e){
         let isChecked = e.target.checked;
         if(isChecked){
             this.setState({
                 isRemember: true
-            },()=>{
-	        	console.log(this.state.isRemember);
-	    	})
+            })
         }else{
             this.setState({
                 isRemember: false
-            },()=>{
-	        	console.log(this.state.isRemember);
-	    	})
+            })
         }
     }
 	//点击发送验证码
 	success(){
-	  message.success('验证码已发送，请注意查收！', );
+	  this.countDown();
 	};
 	//验证码倒计时
-	
+	countDown(){
+		if(this.state.liked){
+			message.success('验证码已发送，请注意查收！', );
+          this.timer = setInterval(()=> {
+            var count = this.state.count;
+            this.state.liked = false;
+            this.refs.timer.style.display = "block";
+            this.refs.sendCode.style.display = "none";
+            count -= 1;
+            if (count < 1) {
+              this.setState({
+                liked: true
+              });
+              count = 60;
+　　　　　　　　clearInterval(this.timer);
+				this.refs.timer.style.display = "none";
+				this.refs.sendCode.style.display = "block";
+            }
+            this.setState({
+              count: count
+            });
+          }, 1000);
+        }
+	};
+	//点击登录按钮
+	load(){
+		
+	}
 	//改变登录方式
 	showNum(){
 		this.refs.numberLogin.style.display = "block";
 		this.refs.phoneLogin.style.display = "none";
-		this.refs.num.style.borderBottom = "1px solid #5c4335"
-		//this.refs.phones.style.borderBottom = "none"
+		this.refs.num.style.borderBottom = "1px solid #5c4335";
+		this.refs.phones.style.borderBottom = "none";
 	}
 	showPhone(){
 		this.refs.numberLogin.style.display = "none";
 		this.refs.phoneLogin.style.display = "block";
-		//this.refs.phones.style.borderBottom = "1px solid #5c4335";
+		this.refs.phones.style.borderBottom = "1px solid #5c4335";
 		this.refs.num.style.borderBottom = "none";
 	}
 	render() {
@@ -99,7 +132,7 @@ export default class My extends React.Component {
 					<div className="content">
 						<div className="headerLogin">
 							<span onClick={this.showNum} ref="num">账号密码登陆</span>
-							<span onClick={this.showPhone} ref="phone">手机验证码登录</span>
+							<span onClick={this.showPhone} ref="phones">手机验证码登录</span>
 						</div>
 						<div className="numberLogin" ref="numberLogin">
 							<form method="post" name="" action="">
@@ -108,15 +141,15 @@ export default class My extends React.Component {
 							</form>
 						</div>
 						<div className="phoneLogin" ref="phoneLogin">
-							<Input type="text" placeholder="手机号" />
+							<Input type="text" placeholder="手机号" onBlur={this.changePhone}/>
 							<div className="SecurityCode">
 								<Input type="text" placeholder="请输入图片字符"/>
 								<div id="container"></div>
 							</div>
 							<div className="getCode">
-								<Input type="text" placeholder="输入手机验证码"/>
+								<Input type="text" placeholder="输入手机验证码" />
 								<div className="getCodeBtn">
-									<Button className="yanCode" onClick={this.success}>发送验证码</Button>
+									<Button className="yanCode" onClick={this.success} ref="yanCode1"><span className="sendCode" ref="sendCode">发送验证码</span><span className="time" ref="timer">({this.state.count})秒后重新发送</span></Button>
 								</div>
 							</div>
 							
@@ -126,13 +159,15 @@ export default class My extends React.Component {
 						</div>
 						<div className="footLogin">
 							<div className="checkbox">
-								<input type="checkbox" name="rememberMe" checked={this.state.isRemember} onClick={this.handleCheckbox.bind(this)} />记住密码
+								<input type="checkbox" name="rememberMe" checked={this.state.isRemember} onClick={this.handleCheckbox} />
+								&nbsp;&nbsp;
+								记住密码
 							</div>
 							<div className="toRegister">
 								忘记密码
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<Link to={"./Register"}>
-									去注册
+									去注册>	
 								</Link>
 							</div>
 						</div>
