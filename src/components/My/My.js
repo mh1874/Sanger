@@ -136,18 +136,18 @@ export default class My extends React.Component {
 						</div>
 						<div className="numberLogin" ref="numberLogin">
 							<form method="post" name="" action="">
-								<Input type="text" placeholder="用户名/邮箱地址" onChange={this.changeName} name="user"/>
-								<Input type="password" placeholder="填写密码" onChange={this.changePwd} name="pwd"/>
+								<input type="text" placeholder="用户名/邮箱地址" onChange={this.changeName} name="user"/>
+								<input type="password" placeholder="填写密码" onChange={this.changePwd} name="pwd"/>
 							</form>
 						</div>
 						<div className="phoneLogin" ref="phoneLogin">
-							<Input type="text" placeholder="手机号" onBlur={this.changePhone}/>
+							<input type="text" placeholder="手机号" onBlur={this.changePhone}/>
 							<div className="SecurityCode">
-								<Input type="text" placeholder="请输入图片字符"/>
+								<input type="text" placeholder="请输入图片字符"/>
 								<div id="container"></div>
 							</div>
 							<div className="getCode">
-								<Input type="text" placeholder="输入手机验证码" />
+								<input type="text" placeholder="输入手机验证码" />
 								<div className="getCodeBtn">
 									<Button className="yanCode" onClick={this.success} ref="yanCode1"><span className="sendCode" ref="sendCode">发送验证码</span><span className="time" ref="timer">({this.state.count})秒后重新发送</span></Button>
 								</div>
