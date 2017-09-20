@@ -11,6 +11,9 @@ class Register extends React.Component{
 	constructor(){
 		super()
 		this.state = {
+			fnOphone : false,
+			fnOpaw : false,
+			fnOconfirm : false,
 			username : "",
 			passwords : "",
 			confirm : ""
@@ -18,19 +21,24 @@ class Register extends React.Component{
 		this.fnPhone = this.fnPhone.bind(this)
 		this.fnPaw = this.fnPaw.bind(this)
 		this.fnConfirm = this.fnConfirm.bind(this)
+		this.fnSub = this.fnSub.bind(this)
 	}
 	componentDidMount(){
 		var verifyCode = new window.GVerify("container");
+		
 	}
 	//手机号判断是否输入正确
 	fnPhone(event){
 		var pattern = /^(13|14|15|18)[0-9]{9}$/;
-		console.log(event.target.value)
 		//正则判断手机号格式
 		if (pattern.test(event.target.value)) {
 			this.setState({
-				username : event.target.value
+				username : event.target.value,
+				fnOphone : true
+			},()=>{
+				console.log(this.state.fnOphone)
 			})
+			
 		}else{
 			this.refs.Prompt_username.style.display = "block";
 			this.refs.Prompt_password.style.display = "none";
@@ -41,11 +49,11 @@ class Register extends React.Component{
 	//密码格式是否输入正确
 	fnPaw(event){
 		var pat = /^\w{6,20}$/
-		console.log(event.target.value)
 		//判断密码格式
 		if (pat.test(event.target.value)) {
 			this.setState({
-				passwords : event.target.value
+				passwords : event.target.value,
+				fnOpaw:true
 			})
 		}else{
 			this.refs.Prompt_username.style.display = "none";
@@ -56,18 +64,36 @@ class Register extends React.Component{
 	}
 	//判断两次密码是否一致
 	fnConfirm(event){
-		console.log(event.target.value)
-		console.log(this.state.passwords)
-		if (event.target.value == this.state.passwords) {
+//		console.log(event.target.value)
+//		console.log(this.state.passwords)
+		if (event.target.value == this.state.passwords && event.target.value != "") {
 			console.log(1)
 			this.setState({
-				confirm : event.target.value
+				confirm : event.target.value,
+				fnOconfirm : true
 			})
 		}else{
 			this.refs.Prompt_username.style.display = "none";
 			this.refs.Prompt_password.style.display = "none";
 			this.refs.Prompt_confirm.style.display = "block";
 			this.refs.Prompt_pic.style.display = "none";
+		}
+	}
+	fnSub(){
+		console.log(this.refs.txt.value)
+		console.log(this.refs.pass.value)
+		var a = this.refs.txt.value;
+		var b = this.refs.pass.value;
+		if (this.state.fnOphone && this.state.fnOpaw && this.state.fnOconfirm) {
+			fetch(`/api/regist?username=${a}&psw=${b}`)
+				.then((res) => {
+					alert("注册成功");
+				})
+				.catch((err) => {
+					alert("注册失败");
+				})
+		}else{
+			alert("注册失败")
 		}
 	}
 	render() {
@@ -80,16 +106,16 @@ class Register extends React.Component{
 						用户注册
 					</div>
 					<div className="register_con">
-						<form method="post" name="">
-							<Input type="text" placeholder="请输入手机号" onBlur={this.fnPhone}/>
-							<Input type="password" placeholder="密码：8~20位字符，包含字母和数字" onBlur={this.fnPaw} />
-							<Input type="password" placeholder="确认密码" onBlur={this.fnConfirm} />
+						<form method="post" name="" action="/api/regist">
+							<input type="text" placeholder="请输入手机号" onBlur={this.fnPhone} ref="txt"/>
+							<input type="password" placeholder="密码：8~20位字符，包含字母和数字" onBlur={this.fnPaw} ref="pass"/>
+							<input type="password" placeholder="确认密码" onBlur={this.fnConfirm} ref="conf"/>
 							<div className="SecurityCode">
-								<Input type="text" placeholder="请输入图片字符"/>
+								<input type="text" placeholder="请输入图片字符"/>
 								<div id="container"></div>
 							</div>
 							<div className="getCode">
-								<Input type="text" placeholder="输入手机验证码"/>
+								<input type="text" placeholder="输入手机验证码"/>
 								<div className="getCodeBtn">
 									发送验证码
 								</div>
@@ -111,9 +137,10 @@ class Register extends React.Component{
 						</li>
 						
 					</div>
-					<div className="registers">
+					<div className="registers" type="submit" onClick={this.fnSub}>
 						注册
 					</div>
+					
 					<div className="register_foot">
 						<div className="checkbox">
 							<input type="checkbox" name="rememberMe" />已阅读并同意

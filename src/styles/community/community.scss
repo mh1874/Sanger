@@ -1,11 +1,27 @@
 .community {
     display: flex;
     flex-direction: column;
-    h1{
-        font-size: .24rem;
+    .community-header {
+        width: 100%;
+        height: .46rem;
+        line-height: .46rem;
+        text-align: center;
+        h5{
+            font-size: .20rem;
+        }
     }
-    .container {
+    .community-container {
         flex: 1;
-        background: #7E8C8D;
+        .community-title {
+            width: 100%;
+            height: .46rem;
+            .title-item {
+                width: 50%;
+                float: left;
+                font-size: .16rem;
+                text-align: center;
+                line-height: .46rem;
+            }
+        }
     }
 }

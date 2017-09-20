@@ -32,7 +32,7 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://localhost:8888/",
+      "target": "http://10.9.158.42:8888/",
       "ws": true
     }
   }
