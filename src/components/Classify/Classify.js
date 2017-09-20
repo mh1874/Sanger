@@ -105,7 +105,6 @@ export default class Classify extends React.Component {
 								}
 						</ul>
 					</div>
-
 					<Footer />
 			</div>
 		);

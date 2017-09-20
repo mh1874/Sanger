@@ -85,30 +85,6 @@ class DetailList extends React.Component {
 			},0)
 		})
 	}
-//	sweetHeart() {
-//		let howSweety = [];
-//		let sweetyClass = {};
-//		fetch("/api/getdataGood").then((res) => {
-//			return res.json();
-//		}).then((data) => {
-//			for(let i=0; i<data.length; i++){
-//				howSweety.push(data[i].sweetNum);
-//			}
-//			return howSweety;
-//		}).then((list) => {
-//			for(let i=0; i<list.length; i++){
-//				let name = [];
-//				for(let j=0; j<list[i]; j++){
-//					name.push("iconfont active")
-//				}
-//				for(let k=0; k<(list.length-list[i]-1); k++){
-//					name.push("iconfont")
-//				}
-//				sweetyClass["name" + i] = name;
-//			}
-//			console.log(sweetyClass)
-//		})
-//	}
 	//商品列表详情页模板
 	render() {
 		return (

@@ -100,6 +100,11 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div id="homeMain" >
+				<Link to={"/ShopCart"}>  
+					<span className="detail_car">
+						<i className="iconfont">&#xe501;</i>
+					</span>
+				</Link>
 				<div className="home">
 					<Header />
 					<div className="section" ref="homeWrapper">
@@ -108,8 +113,10 @@ class Home extends React.Component {
 								{
 									this.state.swiper.map((item, index) => {
 										return <li key={item._id}>
-												<img src={item.src} alt={item.name}/>
-											</li>
+													<Link to={"/classify"}>
+														<img src={item.src} alt={item.name}/>
+													</Link>
+												</li>
 									})
 								}
 							</Carousel>
@@ -119,8 +126,10 @@ class Home extends React.Component {
 										this.state.list.map((item, index) => {
 											return <li key={item._id}>
 														<div>
-															<img src={item.src} alt={item.name}/>
-															<span>{item.name}</span>
+															<Link to={"/classify"}>
+																<img src={item.src} alt={item.name}/>
+																<span>{item.name}</span>
+															</Link>	
 														</div>
 													</li>
 										})
@@ -130,7 +139,7 @@ class Home extends React.Component {
 							<div className="fill"></div>
 							<div className="title_billboard">
 								<h5 className="title">廿一客·新品</h5>
-								<Link to={"/DetailSingle/"} className="titleImg">
+								<Link to={"/classify"} className="titleImg">
 									<img src="http://static.21cake.com//upload/images/5b6e03957eea42c2b804581bab62d833.jpg" alt="mongo"/>
 								</Link>
 								<div className="billboardWrapper" ref="cakeWrapper">
@@ -139,7 +148,7 @@ class Home extends React.Component {
 											this.state.newGoods.map((item, index) => {
 												return <li key={item._id} >
 															<div className="goods-list">
-																<Link to={"/DetailSingle/" + item._id}>
+																<Link to={"/detailList/" + item._id}>
 																	<img src={item.headImg} alt={item.chineseName}/>
 																	<h2>{item.chineseName}</h2>
 																	<p>{item.introduce}</p>
@@ -152,7 +161,7 @@ class Home extends React.Component {
 								</div>
 								<div className="fill"></div>
 								<h5 className="title">廿一客·中秋节</h5>
-								<Link to={"/DetailSingle/"} className="titleImg">
+								<Link to={"/classify"} className="titleImg">
 									<img src="http://static.21cake.com//upload/images/ab936b72722e8e6e64b746cd08af0f90.jpg" alt="moonCake"/>
 								</Link>
 								<div className="icecreamWrapper" ref="iceCreamWrapper">
@@ -161,7 +170,7 @@ class Home extends React.Component {
 											this.state.newAaas.map((item, index) => {
 												return <li key={item._id} >
 															<div className="goods-list">
-																<Link to={"/DetailSingle/" + item._id}>
+																<Link to={"/detailList/" + item._id}>
 																	<img src={item.headImg} alt={item.chineseName}/>
 																	<h2>{item.chineseName}</h2>
 																	<p>{item.introduce}</p>
@@ -206,15 +215,17 @@ class Home extends React.Component {
 									{
 										this.state.newArticles.map((item, index) => {
 											return	<li key={item._id}>
-														<Card bodyStyle={{ padding: 0 }} className="article-card">
-														    <div className="custom-image">
-														      <img src="http://static.21cake.com/public/images/a9/75/d9/24361110e115f5fe45681b0c5c2b0f5c.jpg"/>
-														    </div>
-														    <div className="custom-card">
-														    	<h6>{item.title}</h6>
-														    	<p></p>
-														    </div>
-														</Card>
+														<Link to={'/articles/' + item._id}>
+															<Card bodyStyle={{ padding: 0 }} className="article-card">
+															    <div className="custom-image">
+															      <img src="http://static.21cake.com/public/images/a9/75/d9/24361110e115f5fe45681b0c5c2b0f5c.jpg"/>
+															    </div>
+															    <div className="custom-card">
+															    	<h6>{item.title}</h6>
+															    	<p></p>
+															    </div>
+															</Card>
+														</Link>	
 													</li>
 										})
 									}
