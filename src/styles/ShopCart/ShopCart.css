@@ -38,17 +38,18 @@
         font-size: .14rem;
         color: #442818; }
       .shoppingCart .shopCartContent .haveGoods .shopGoods {
-        width: 100%; }
+        width: 100%;
+        overflow: hidden; }
         .shoppingCart .shopCartContent .haveGoods .shopGoods li {
           width: 100%;
-          height: 3rem;
+          height: 2.8rem;
           background: #fff;
           display: flex;
-          justify-content: center; }
+          flex-direction: column; }
           .shoppingCart .shopCartContent .haveGoods .shopGoods li .shopInfo {
             width: 80%;
             height: 1.2rem;
-            margin-top: .2rem;
+            margin-left: 10%;
             display: flex; }
             .shoppingCart .shopCartContent .haveGoods .shopGoods li .shopInfo img {
               width: 40%;
@@ -110,3 +111,58 @@
                   text-align: center;
                   line-height: .4rem;
                   background: #efefef; }
+          .shoppingCart .shopCartContent .haveGoods .shopGoods li .give {
+            margin-top: .2rem;
+            width: 80%;
+            height: .5rem;
+            margin-left: 10%;
+            position: relative; }
+            .shoppingCart .shopCartContent .haveGoods .shopGoods li .give img {
+              width: .5rem;
+              height: 100%; }
+            .shoppingCart .shopCartContent .haveGoods .shopGoods li .give span {
+              position: absolute;
+              top: 0;
+              right: 0;
+              margin-right: 20%;
+              display: inline-block;
+              width: 55%;
+              height: 100%;
+              line-height: .5rem;
+              font-size: .12rem; }
+          .shoppingCart .shopCartContent .haveGoods .shopGoods li .birthday {
+            width: 80%;
+            margin-left: 10%;
+            height: .5rem;
+            display: flex;
+            justify-content: space-between;
+            margin-top: .2rem; }
+            .shoppingCart .shopCartContent .haveGoods .shopGoods li .birthday .card {
+              width: 20%;
+              height: 100%;
+              background: #fbfbfb;
+              display: flex;
+              flex-direction: column;
+              align-items: center; }
+              .shoppingCart .shopCartContent .haveGoods .shopGoods li .birthday .card span {
+                display: block;
+                width: 100%;
+                height: 50%;
+                margin-top: 25%;
+                color: #fff;
+                font-size: .16rem;
+                text-align: center;
+                line-height: 0.25rem;
+                background: #000; }
+            .shoppingCart .shopCartContent .haveGoods .shopGoods li .birthday .addCard {
+              width: 60%;
+              height: 100%;
+              line-height: 0.3rem;
+              text-align: center;
+              font-size: 0.16rem; }
+            .shoppingCart .shopCartContent .haveGoods .shopGoods li .birthday .open {
+              width: 10%;
+              height: 100%;
+              line-height: 0.3rem;
+              text-align: center;
+              font-size: 0.16rem; }
