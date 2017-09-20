@@ -27,12 +27,14 @@
                 input{
                     width: 100%;
                     border: none;
+                    border-bottom: 0.01rem solid #ccc;
+                    padding: 4px 7px;
                     border-bottom: 1px solid #D5D5D5;
                     height: .46rem;
                     line-height: .46rem;
                     outline: none;
                     font-size: 0.14rem;
-                    color: #ccc;
+                    color: #aaa;
                     z-index: 5;
                 }
                 .SecurityCode{
