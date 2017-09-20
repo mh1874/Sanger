@@ -11,7 +11,7 @@ import My from './components/My/My.js'
 import Register from './components/My/Register.js'
 import DetailSingle from './components/Detail/DetailSingle.js'
 import DetailList from './components/DetailList/DetailList.js'
-
+import Articles from './components/Articles/Articles.js'
 
 const App = () => (
   <Router>
@@ -23,6 +23,7 @@ const App = () => (
       <Route path="/register" component={Register}/>
       <Route path="/detailSingle/:id" component={DetailSingle}/>
       <Route path="/detailList/:id" component={DetailList}/>
+      <Route path="/articles/:id" component={Articles}/>
     </div>
   </Router>
 )
