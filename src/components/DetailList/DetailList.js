@@ -6,128 +6,119 @@ import {Link} from 'react-router-dom';
 class DetailList extends React.Component {
 	constructor(){
 		super();   //调用父类构造器
+		this.cakePart = this.cakePart.bind(this);
 		this.state = {
 			List_detail: [] ,
 			List_detail_label: [],
 			List_detail_details: [],
 			List_detail_detailsImg: [],
 			List_detail_sweetNum: '',
-			styleS: []
+			styleS: [],
+			List_detail_sweetyName: []
 		};
 	}
 	componentDidMount() {
-		var data 
+		this.cakePart();
+	}
+	cakePart() {
+		let data;
+		let sweetyname = [];
 		fetch("/api/getdataGood").then((res) =>{
 			return res.json()
 		}).then((data_a)=>{
 			setTimeout(() => {
-				console.log(data_a[0]._id)
-				console.log(this.props.match.params.id)
-				for (var i =0; i<data_a.length; i++ ) {
+				for (let i =0; i<data_a.length; i++ ) {
 					if (data_a[i]._id === this.props.match.params.id) {
-						data = data_a[i]
-						console.log(data_a[i])
+						data = data_a[i];
+						for(let j=0; j<data.sweetNum; j++){
+							sweetyname.push("iconfont active")
+						}
+						for(let k=0; k<(5-data.sweetNum); k++){
+							sweetyname.push("iconfont")
+						}
+						setTimeout(() => {
+							this.setState({   //让页面上数据更新
+						 		List_detail: data,
+						 		List_detail_details : data.details,
+						 		List_detail_label : data.label,
+						 		List_detail_detailsImg : data.detailsImg,
+						 		List_detail_sweetNum : data.sweetNum,
+						 		List_detail_sweetyName: sweetyname
+						 	})
+						},0)
+					}else{
+						this.coffeePart();
 					}
 				}
 			},0)
-		}).then(() => {
-			setTimeout(() => {
-				this.setState({   //让页面上数据更新
-			 		List_detail: data,
-			 		List_detail_details : data.details,
-			 		List_detail_label : data.label,
-			 		List_detail_detailsImg : data.detailsImg,
-			 		List_detail_sweetNum : data.sweetNum
-			 	})
-			},0)
-		});
+		})
+	}
+	coffeePart() {
+		let data;
+		let sweetyname = [];
 		fetch("/api/getdataAaa").then((res) =>{
 			return res.json()
 		}).then((data_b)=>{
 			setTimeout(() => {
-				console.log(data_b[0]._id)
-				console.log(this.props.match.params.id)
-				for (var j =0; j<data_b.length; j++ ){
+				for (let j=0; j<data_b.length; j++ ){
 					if (data_b[j]._id === this.props.match.params.id) {
 						data = data_b[j];
-						console.log(data_b[j])
+						for(let i=0; i<data.sweetNum; i++){
+							sweetyname.push("iconfont active")
+						}
+						for(let k=0; k<(5-data.sweetNum); k++){
+							sweetyname.push("iconfont")
+						}
+						console.log(sweetyname)
+						setTimeout(() => {
+							this.setState({   //让页面上数据更新
+						 		List_detail: data,
+						 		List_detail_details : data.details,
+						 		List_detail_label : data.label,
+						 		List_detail_detailsImg : data.detailsImg,
+						 		List_detail_sweetNum : data.sweetNum,
+						 		List_detail_sweetyName: sweetyname
+						 	})
+						},0)
 					}
-					console.log(data)
 				}
 			},0)
-		}).then(() => {
-			setTimeout(() => {
-				this.setState({   //让页面上数据更新
-			 		List_detail: data,
-			 		List_detail_details : data.details,
-			 		List_detail_label : data.label,
-			 		List_detail_detailsImg : data.detailsImg,
-			 		List_detail_sweetNum : data.sweetNum
-			 	})
-			},0)
-		});
+		})
 	}
-	//传入的id值比较，获取所点击的商品的详情页信息
-//		fetch("/api/getdataGood").then((res) =>{
-//			return res.json()
-//		}).then((data)=>{
-//			setTimeout(() => {
-//				for (var i =0; i<data.length; i++ ) {
-//					if (data[i]._id === this.props.match.params.id) {
-//						data = data[i]
-//						console.log(1)
-//					}
-//					else{
-//						console.log(2)
-//						fetch("/api/getdataAaa").then((res) =>{
-//							return res.json()
-//						}).then((data_s)=>{
-//							for (var j =0; j<data_s.length; j++ ){
-//								if (data[j]._id === this.props.match.params.id) {
-//									data = data[j]
-//								}
-//							}
-//						})
-//						console.log(data[0])
-//					}
+//	sweetHeart() {
+//		let howSweety = [];
+//		let sweetyClass = {};
+//		fetch("/api/getdataGood").then((res) => {
+//			return res.json();
+//		}).then((data) => {
+//			for(let i=0; i<data.length; i++){
+//				howSweety.push(data[i].sweetNum);
+//			}
+//			return howSweety;
+//		}).then((list) => {
+//			for(let i=0; i<list.length; i++){
+//				let name = [];
+//				for(let j=0; j<list[i]; j++){
+//					name.push("iconfont active")
 //				}
-//				this.setState({   //让页面上数据更新
-//			 		List_detail: data,
-//			 		List_detail_label : data.label,
-//			 		List_detail_details : data.details,
-//			 		List_detail_detailsImg : data.detailsImg,
-//			 		List_detail_sweetNum : data.sweetNum
-//			 })
-//			},0)
-//			
+//				for(let k=0; k<(list.length-list[i]-1); k++){
+//					name.push("iconfont")
+//				}
+//				sweetyClass["name" + i] = name;
+//			}
+//			console.log(sweetyClass)
 //		})
 //	}
-	sweet(){
-//		var sweets = document.getElementsByClassName("sweets");
-//		var sweetNum = this.state.List_detail_sweetNum
-//		var icons = []
-//		for (var i = 0; i < sweetNum; i ++) {
-//			icons.push("iconfont active")
-//		}
-//		for (var j = 0; j<(5-sweetNum) ; i++) {
-//			icons.push("iconfont")
-//		}
-//		this.setState({
-//			styleS : icons
-//		})
-	}
 	//商品列表详情页模板
 	render() {
-		console.log(this.state.List_detail_label)
-//		console.log(this.state.styleS)
-//		console.log(sweetNum)
 		return (
 			<div className="Details">
 				<div className="headerList">
-			      	<Link className="header_btn" to="../Classify/Classify">
+			      	<Link className="header_btn" to="/Classify">
 			       		<span>&lt;</span>
 			     	</Link>
 			     	<p>{this.state.List_detail.chineseName}</p>
+			     	<p></p>
 			    </div>
 				<div className="detail_box">
 					<span className="detail_car">
@@ -158,12 +149,11 @@ class DetailList extends React.Component {
 							<i className="iconfont">&#xe634;</i>
 							<span>参考甜度</span>
 							<span className="sweets"> 
-								
-								<i className="iconfont">&#xe634;</i>
-								<i className="iconfont">&#xe634;</i>
-								<i className="iconfont">&#xe634;</i>
-								<i className="iconfont">&#xe634;</i>
-								<i className="iconfont">&#xe634;</i>
+								{
+									this.state.List_detail_sweetyName.map((item, index) => {
+										return <i key={"sweety" + index} className={item}>&#xe634;</i>
+									})
+								}
 							</span>
 						</p>
 						<p>

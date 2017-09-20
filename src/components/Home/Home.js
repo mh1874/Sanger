@@ -129,7 +129,7 @@ class Home extends React.Component {
 							</div>
 							<div className="fill"></div>
 							<div className="title_billboard">
-								<p >廿一客·新品</p>
+								<h5 className="title">廿一客·新品</h5>
 								<Link to={"/DetailSingle/"} className="titleImg">
 									<img src="http://static.21cake.com//upload/images/5b6e03957eea42c2b804581bab62d833.jpg" alt="mongo"/>
 								</Link>
@@ -151,11 +151,12 @@ class Home extends React.Component {
 									</ul>
 								</div>
 								<div className="fill"></div>
+								<h5 className="title">廿一客·中秋节</h5>
 								<Link to={"/DetailSingle/"} className="titleImg">
 									<img src="http://static.21cake.com//upload/images/ab936b72722e8e6e64b746cd08af0f90.jpg" alt="moonCake"/>
 								</Link>
-								<div className="billboardWrapper" ref="iceCreamWrapper">
-									<ul className="home-ul">
+								<div className="icecreamWrapper" ref="iceCreamWrapper">
+									<ul className="ice-ul">
 										{
 											this.state.newAaas.map((item, index) => {
 												return <li key={item._id} >
@@ -174,6 +175,7 @@ class Home extends React.Component {
 							</div>
 							<div className="fill"></div>
 							<div className="activities">
+								<h5 className="title">廿一客·活动</h5>
 								<Carousel autoplay>
 									<Card style={{ width: 240 }} bodyStyle={{ padding: 0 }} className="activity-card">
 									    <div className="custom-card">
@@ -199,11 +201,12 @@ class Home extends React.Component {
 							</div>
 							<div className="fill"></div>
 							<div className="articles" ref="articlesWrapper">
+								<h5 className="title">廿一客·文章</h5>
 								<ul className="articles-ul">
 									{
 										this.state.newArticles.map((item, index) => {
 											return	<li key={item._id}>
-														<Card style={{ width: 240 }} bodyStyle={{ padding: 0 }} className="article-card">
+														<Card bodyStyle={{ padding: 0 }} className="article-card">
 														    <div className="custom-image">
 														      <img src="http://static.21cake.com/public/images/a9/75/d9/24361110e115f5fe45681b0c5c2b0f5c.jpg"/>
 														    </div>
@@ -219,7 +222,7 @@ class Home extends React.Component {
 								</ul>
 							</div>
 							<div className="lostbottom">
-								<div>没了</div>
+								<div>没了...</div>
 							</div>
 						</div>
 					</div>

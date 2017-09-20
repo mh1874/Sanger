@@ -2,8 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
+    <meta id="vp" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<script type="text/javascript">
+			var vpDOM = document.getElementById("vp");
+			vpDOM.content = vpDOM.content.replace(/1.0/g, 1/window.devicePixelRatio);
+			
+			function calcFz() {
+				var rem = document.documentElement.clientWidth / 3.75;
+				document.getElementsByTagName("html")[0].style.fontSize = rem + "px";
+			}
+			calcFz();
+			window.onresize = calcFz;
+		</script>
+		<meta name="theme-color" content="#000000">
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/

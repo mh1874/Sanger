@@ -11,8 +11,8 @@ export default class Classify extends React.Component {
 	constructor(){
 		super();
 		this.state = {list: []};
-		this.addIce = this.addIce.bind(this)
-		this.addCake = this.addCake.bind(this)
+		this.addIce = this.addIce.bind(this);
+		this.addCake = this.addCake.bind(this);
 	}
 	
 	componentDidMount() {
@@ -32,7 +32,6 @@ export default class Classify extends React.Component {
 		fetch("/api/getdataAaa").then((res) => {
 		 	return res.json();
 		 }).then((data)=>{
-		 	console.log(data);
 		 	this.setState({ //让页面上数据更新
 		 		list: data
 		 	})
@@ -48,10 +47,10 @@ export default class Classify extends React.Component {
 		 	this.setState({ //让页面上数据更新
 		 		list: data
 		 	})
-		 });
+		});
 		 //控制头部说明的显示和隐藏
-		 this.refs.cake.style.display = "block"
-		 this.refs.coffee.style.display = "none"
+		 this.refs.cake.style.display = "block";
+		 this.refs.coffee.style.display = "none";
 	}
 	render() {
 		return (
@@ -83,7 +82,7 @@ export default class Classify extends React.Component {
 						</div>
 						<ul>
 								{
-									this.state.list.map((item,index)=>{
+									this.state.list.map((item, index)=>{
 										return <li key={item._id}>
 													<Link to={"/DetailList/" + item._id}>
 														<img src={item.headImg} alt={item.chineseName}/>

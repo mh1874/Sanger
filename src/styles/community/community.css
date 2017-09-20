@@ -1,8 +1,21 @@
 .community {
   display: flex;
   flex-direction: column; }
-  .community h1 {
-    font-size: .24rem; }
-  .community .container {
-    flex: 1;
-    background: #7E8C8D; }
+  .community .community-header {
+    width: 100%;
+    height: .46rem;
+    line-height: .46rem;
+    text-align: center; }
+    .community .community-header h5 {
+      font-size: .20rem; }
+  .community .community-container {
+    flex: 1; }
+    .community .community-container .community-title {
+      width: 100%;
+      height: .46rem; }
+      .community .community-container .community-title .title-item {
+        width: 50%;
+        float: left;
+        font-size: .16rem;
+        text-align: center;
+        line-height: .46rem; }
