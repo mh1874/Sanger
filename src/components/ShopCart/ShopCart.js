@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer.js';
 export default class ShopCart extends React.Component {
 	constructor() {
 		super();
-		this.state = {list: {},price : {}};
+		this.state = {list: {},price : {},group : {}};
 		this.addCake = this.addCake.bind(this);
 	}
 	componentDidMount() {
@@ -20,7 +20,8 @@ export default class ShopCart extends React.Component {
 		}).then((data)=>{
 		 	this.setState({ //让页面上数据更新
 		 		list: data[0],
-		 		price : data[0].price
+		 		price : data[0].price,
+		 		group : data[0].group[1]
 		 	},()=>{
 		 		console.log(this.state.list)
 		 		console.log(this.state.price)
@@ -63,8 +64,18 @@ export default class ShopCart extends React.Component {
 										</div>
 									</div>
 								</div>
-								<div>
-									
+								<div className="give">
+									<img src={this.state.group.img} />
+									<span>{this.state.group.name}</span>
+								</div>
+								<div className="birthday">
+									<div className="card">
+										<span>生日牌</span>
+									</div>
+									<div className="addCard">
+										+  添加生日牌
+									</div>
+									<div className="open">></div>
 								</div>
 							</li>
 						</ul>
