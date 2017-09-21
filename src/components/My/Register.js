@@ -18,7 +18,8 @@ class Register extends React.Component{
 			fnOpic : false,
 			username : "",
 			passwords : "",
-			confirm : ""
+			confirm : "",
+			verifyCodes : {}
 		}
 		//改变方法指针
 		this.fnPhone = this.fnPhone.bind(this)
@@ -29,7 +30,9 @@ class Register extends React.Component{
 	}
 	componentDidMount(){
 		var verifyCode = new window.GVerify("container");
-		
+		this.setState({
+			verifyCodes : verifyCode
+		})
 	}
 	//手机号判断是否输入正确
 	fnPhone(event){
@@ -71,7 +74,6 @@ class Register extends React.Component{
 //		console.log(event.target.value)
 //		console.log(this.state.passwords)
 		if (event.target.value == this.state.passwords && event.target.value != "") {
-			console.log(1)
 			this.setState({
 				confirm : event.target.value,
 				fnOconfirm : true
@@ -85,9 +87,10 @@ class Register extends React.Component{
 	}
 	//判断图形验证码是否正确
 	fnPic(evnet){
-		var verifyCode = new window.GVerify("container");
-		var res = verifyCode.validate(document.getElementById("aaa").value);
+		
+		var res = this.state.verifyCodes.validate(document.getElementById("aaa").value);
 		if(res){
+			console.log(1)
 			this.setState({
 				fnOpic : true
 			})
@@ -100,10 +103,9 @@ class Register extends React.Component{
 	}
 	//注册按钮，判断注册是否成功
 	fnSub(){
-		console.log(this.refs.txt.value)
-		console.log(this.refs.pass.value)
 		var a = this.refs.txt.value;
 		var b = this.refs.pass.value;
+		console.log(this.state.fnOpic)
 		//fetch添加注册信息到数据库
 		if (this.state.fnOphone && this.state.fnOpaw && this.state.fnOconfirm && this.state.fnOpic) {
 			fetch(`/api/regist?username=${a}&psw=${b}`)
