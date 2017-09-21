@@ -167,3 +167,32 @@
               line-height: 0.3rem;
               text-align: center;
               font-size: 0.16rem; }
+  .shoppingCart .shopFoot {
+    width: 100%;
+    height: .48rem;
+    border-top: .01rem solid #d8d8d8; }
+    .shoppingCart .shopFoot .buy {
+      width: 50%;
+      height: 100%;
+      float: right;
+      display: flex; }
+      .shoppingCart .shopFoot .buy .shopPrice {
+        width: 60%;
+        height: 100%; }
+        .shoppingCart .shopFoot .buy .shopPrice p {
+          width: 100%;
+          height: 50%;
+          font-size: .12rem;
+          font-weight: 600;
+          height: 50%;
+          float: right;
+          line-height: .24rem;
+          text-align: center; }
+      .shoppingCart .shopFoot .buy .get {
+        width: 40%;
+        height: 100%;
+        background: black;
+        text-align: center;
+        line-height: .48rem;
+        font-size: .17rem;
+        color: #fff; }
