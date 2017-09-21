@@ -78,6 +78,9 @@ export default class ShopCart extends React.Component {
 		return (
 			<div className="shoppingCart">
 				<h1 className="shopCartHead">购物车</h1>
+				<Link to="/">
+				<span className="fan">返回</span>
+				</Link>
 				<div className="shopCartContent">
 					<div className="nothing">
 						<img src="http://static.21cake.com/themes/wap/img/cart-empty.png"/>
