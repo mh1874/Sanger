@@ -1,11 +1,11 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Footer from '../Footer/Footer.js';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 
 
-
-export default class ShopCart extends React.Component {
+class ShopCartUI extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -15,66 +15,110 @@ export default class ShopCart extends React.Component {
 			totalPrice: "",
 			showShopNum : 1
 		};
-		this.addCake = this.addCake.bind(this);
-		this.addNum = this.addNum.bind(this);
-		this.reduceNum = this.reduceNum.bind(this);
-		this.deleteGoods = this.deleteGoods.bind(this);
+//		this.addCake = this.addCake.bind(this);
+//		this.addNum = this.addNum.bind(this);
+//		this.reduceNum = this.reduceNum.bind(this);
+//		this.deleteGoods = this.deleteGoods.bind(this);
 	}
 	componentDidMount() {
-		this.addCake();
-	}
-	addCake(){ 
-		fetch("/api/getdataGood").then((res) => {
-		 	return res.json();
-		}).then((data)=>{
-		 	this.setState({ //让页面上数据更新
-		 		list: data[0],
-		 		price : data[0].price,
-				group : data[0].group[1],
-				totalPrice : data[0].price.newPrice
-		 	},()=>{
-		 		console.log(this.state.list)
-		 		console.log(this.state.price)
-		 	})
-		});
-	}
-	//点击加号
-	addNum(){
-		this.setState({
-			showShopNum : ++this.state.showShopNum
-		})
-		this.computedTotalPrice()
-		this.refs.reduceBtn.style.display = "block";
-		this.refs.iconfont.style.display = "none";
-	}
-	//点击减号
-	reduceNum(){
-		this.setState({
-			showShopNum : --this.state.showShopNum
-		},()=>{
-			console.log(this.state.showShopNum)
-		})
-		this.computedTotalPrice()
-		if(this.state.showShopNum < 2){
-			this.refs.reduceBtn.style.display = "none";
-			this.refs.iconfont.style.display = "block";
-		}
-	}
-	deleteGoods(){
-		//此处应删除商品信息
-		this.refs.shopGoods.style.display = "none";
-		this.setState({
-			totalPrice : 0
-		})
-	}
-	//计算总价
-	computedTotalPrice(){
-		var shopNum = this.state.showShopNum;
-		this.setState({
-			totalPrice : shopNum * this.state.price.newPrice + ".00"
-		})
-	}
+		let that = this;
+		let data;
+		fetch('/api/getdataGood').then((res) => {
+			return res.json();
+		}).then((dataCart) => {
+			setTimeout(() => {
+				for(let i = 0; i < dataCart.length; i++){
+					for(let j in that.props.classify_list){
+					if(dataCart[i]._id === j){
+						data = dataCart[i];
+						console.log(data)
+						this.setState({
+							list: data,
+							price: data.price,
+							group: data.group,
+							totalPrice: data.price.newPrice,
+							showShopNum: that.props.classify_list[j]
+						})
+					}else{
+						fetch("/api/getdataAaa").then((res) =>{
+							return res.json()
+						}).then((data_b)=>{
+							setTimeout(() => {
+								for (let j=0; j<data_b.length; j++ ){
+									for(let k in that.props.classify_list){
+									if (data_b[j]._id === j) {
+										data = data_b[j];
+										this.setState({   //让页面上数据更新
+									 		list: data,
+											price: data.price,
+											group: data.group,
+											totalPrice: data.price.newPrice,
+											showShopNum: that.props.classify_list[j]
+									 	})
+									}
+								}	
+								}
+							},0)
+						})
+					}
+				}
+			}
+		},1000)
+	})
+}
+//	addCake(){ 
+//		fetch("/api/getdataGood").then((res) => {
+//		 	return res.json();
+//		}).then((data)=>{
+//		 	this.setState({ //让页面上数据更新
+//		 		list: data[0],
+//		 		price : data[0].price,
+//				group : data[0].group[1],
+//				totalPrice : data[0].price.newPrice
+//		 	},()=>{
+//		 		console.log(this.state.list)
+//		 		console.log(this.state.price)
+//		 	})
+//		});
+//	}
+//	//点击加号
+//	addNum(){
+//		this.setState({
+//			showShopNum : ++this.state.showShopNum
+//		})
+//		this.computedTotalPrice()
+//		this.refs.reduceBtn.style.display = "block";
+//		this.refs.iconfont.style.display = "none";
+//	}
+//	//点击减号
+//	reduceNum(){
+//		this.setState({
+//			showShopNum : --this.state.showShopNum
+//		},()=>{
+//			console.log(this.state.showShopNum)
+//		})
+//		this.computedTotalPrice()
+//		if(this.state.showShopNum < 2){
+//			this.refs.reduceBtn.style.display = "none";
+//			this.refs.iconfont.style.display = "block";
+//		}
+//	}
+//	deleteGoods(){
+//		//此处应删除商品信息
+//		this.refs.shopGoods.style.display = "none";
+//		this.setState({
+//			totalPrice : 0
+//		})
+//	}
+//	//计算总价
+//	computedTotalPrice(){
+//		var shopNum = this.state.showShopNum;
+//		this.setState({
+//			totalPrice : shopNum * this.state.price.newPrice + ".00"
+//		})
+//	}
 	render() {
+		console.log(this.props.classify_list)
 		return (
 			<div className="shoppingCart">
 				<h1 className="shopCartHead">购物车</h1>
@@ -143,3 +187,12 @@ export default class ShopCart extends React.Component {
 		);   
 	}
 }
+
+const mapStateToProps = (state) => {
+	return {
+		classify_list: state.classify_list
+	};
+};
+const ShopCart = connect(mapStateToProps)(ShopCartUI);
+
+export default ShopCart;

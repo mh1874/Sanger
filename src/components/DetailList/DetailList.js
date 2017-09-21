@@ -91,11 +91,13 @@ class DetailList extends React.Component {
 	}
 	showYourChoice() {
 		let positionOne = .47 + "rem";
+		this.refs.yourChoice.style.display = "block";
 		this.refs.yourChoice.style.bottom = positionOne;
 	}
 	hideYourChoice() {
 		let positiontwo = -3 + "rem";
 		this.refs.yourChoice.style.bottom = positiontwo;
+		this.refs.yourChoice.style.display = "none";
 	}
 	//商品列表详情页模板
 	render() {
