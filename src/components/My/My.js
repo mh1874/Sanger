@@ -109,7 +109,7 @@ export default class My extends React.Component {
           }, 1000);
         }
 	};
-	//点击登录按钮
+	
 	load(){
 		let uname = this.refs.user.value;
 		let upwd = this.refs.pwd.value;
@@ -133,7 +133,6 @@ export default class My extends React.Component {
 			})
 		}
 	}
-	//页面渲染完成是获取本地存储中的数据
 	getLocal(){
 		let userName1 = JSON.parse( localStorage.name ); 
 		this.setState({
@@ -141,7 +140,6 @@ export default class My extends React.Component {
 			userPassword : userName1.userPassword
 		})
 	}
-	//改变登录方式
 	showNum(){
 		this.refs.numberLogin.style.display = "block";
 		this.refs.phoneLogin.style.display = "none";
