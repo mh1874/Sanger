@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 import React from 'react';
 import Footer from '../Footer/Footer.js';
 import {connect} from 'react-redux';
@@ -198,4 +197,3 @@ const mapStateToProps = (state) => {
 const ShopCart = connect(mapStateToProps)(ShopCartUI);
 
 export default ShopCart;
->>>>>>> 3cdc144202b45e61d72b9432cac7756362cf18b3
