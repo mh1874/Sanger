@@ -120,7 +120,6 @@ export default class My extends React.Component {
 			.catch((err) => {
 				alert("登录失败");
 			})
-		//是否记住密码
 		if(this.state.isRemember === true){ //是否记住密码，若记住，则保存至localstorage，反之，清除
 			// let loginData = {this.state.userName,this.state.userPassword};
 			let loginData = {};
@@ -134,11 +133,15 @@ export default class My extends React.Component {
 		}
 	}
 	getLocal(){
-		let userName1 = JSON.parse( localStorage.name ); 
-		this.setState({
-			userName : userName1.userName,
-			userPassword : userName1.userPassword
-		})
+
+		if(localStorage.name){
+			let userName1 = JSON.parse( localStorage.name ); 
+			this.setState({
+				userName : userName1.userName,
+				userPassword : userName1.userPassword
+			})
+		}
+		
 	}
 	showNum(){
 		this.refs.numberLogin.style.display = "block";
