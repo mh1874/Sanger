@@ -7,6 +7,8 @@ class DetailList extends React.Component {
 	constructor(){
 		super();   //调用父类构造器
 		this.cakePart = this.cakePart.bind(this);
+		this.showYourChoice = this.showYourChoice.bind(this);
+		this.hideYourChoice = this.hideYourChoice.bind(this);
 		this.state = {
 			List_detail: [] ,
 			List_detail_label: [],
@@ -24,7 +26,7 @@ class DetailList extends React.Component {
 		let data;
 		let sweetyname = [];
 		fetch("/api/getdataGood").then((res) =>{
-			return res.json()
+			return res.json();
 		}).then((data_a)=>{
 			setTimeout(() => {
 				for (let i =0; i<data_a.length; i++ ) {
@@ -43,6 +45,7 @@ class DetailList extends React.Component {
 						 		List_detail_label : data.label,
 						 		List_detail_detailsImg : data.detailsImg,
 						 		List_detail_sweetNum : data.sweetNum,
+						 		List_detail_price : data.price.newPrice,
 						 		List_detail_sweetyName: sweetyname
 						 	})
 						},0)
@@ -77,6 +80,7 @@ class DetailList extends React.Component {
 						 		List_detail_label : data.label,
 						 		List_detail_detailsImg : data.detailsImg,
 						 		List_detail_sweetNum : data.sweetNum,
+						 		List_detail_price : data.price.newPrice,
 						 		List_detail_sweetyName: sweetyname
 						 	})
 						},0)
@@ -84,6 +88,14 @@ class DetailList extends React.Component {
 				}
 			},0)
 		})
+	}
+	showYourChoice() {
+		let positionOne = .47 + "rem";
+		this.refs.yourChoice.style.bottom = positionOne;
+	}
+	hideYourChoice() {
+		let positiontwo = -3 + "rem";
+		this.refs.yourChoice.style.bottom = positiontwo;
 	}
 	//商品列表详情页模板
 	render() {
@@ -97,9 +109,11 @@ class DetailList extends React.Component {
 			     	<p></p>
 			    </div>
 				<div className="detail_box">
-					<span className="detail_car">
-						<i className="iconfont">&#xe501;</i>
-					</span>
+					<Link to={"/ShopCart"}>
+						<span className="detail_car">
+							<i className="iconfont">&#xe501;</i>
+						</span>
+					</Link>
 					<div className="detail_src">
 						<img className="detail_src2" src={this.state.List_detail.headImg} alt={this.state.List_detail.chineseName} />
 					</div>
@@ -116,7 +130,21 @@ class DetailList extends React.Component {
 							}
 						</ul>
 					</div>
-					<div className="detail_num">
+					<div className="yourchoice" ref="yourChoice">
+						<div className="yourchoice-item">
+							<span className="close" onClick={this.hideYourChoice}>X</span>
+							<p className="yourchoice-price">￥{this.state.List_detail_price}</p>
+							<ul className="yourchoice-options">
+								<li className="yourchoice-item">17*17cm</li>
+								<li className="yourchoice-item">适合7-8人分享</li>
+								<li className="yourchoice-item">含十套餐具</li>
+								<li className="yourchoice-item">需提前6小时预订</li>
+							</ul>
+							<img src="http://static.21cake.com//themes/wap/img/2.00P-full-17.00.jpg" alt="newfeeling" />
+							<p className="cake-size">商品规格</p>
+						</div>
+					</div>
+					<div className="detail_num" onClick={this.showYourChoice}>
 						<span>规格数量选择</span>
 						<span>&gt; </span>
 					</div>
@@ -166,7 +194,7 @@ class DetailList extends React.Component {
 						}
 					</div>
 				</div>
-				<FooterList />
+				<FooterList Messages={this.state.List_detail._id} />
 			</div>
 		);
 	}

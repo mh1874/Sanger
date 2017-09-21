@@ -8,10 +8,19 @@
         line-height: .43rem;
         font-size: .2rem;
     }
+    .fan{
+        width: 50%;
+        height : .43rem;
+        font-size: .15rem;
+        position: absolute;
+        top : 0;
+        left : 0;
+    }
     .shopCartContent{
         width: 100%;
         flex: 1;
         background: #f1f1f1;
+        overflow: auto;
         .nothing{
             width: 50%;
             height : 2rem;
@@ -196,6 +205,40 @@
                         }
                     }  
                 }
+            }
+        }
+    }
+    .shopFoot{
+        width: 100%;
+        height: .48rem;
+        border-top: .01rem solid #d8d8d8;
+        .buy{
+            width: 50%;
+            height : 100%;
+            float: right;
+            display: flex;
+            .shopPrice{
+                width: 60%;
+                height : 100%;
+                p{
+                    width: 100%;
+                    height : 50%;
+                    font-size: .12rem;
+                    font-weight: 600;
+                    height : 50%;
+                    float: right ;
+                    line-height: .24rem;
+                    text-align: center
+                }
+            }
+            .get{
+                width: 40%;
+                height : 100%;
+                background: black;
+                text-align: center;
+                line-height: .48rem;
+                font-size: .17rem;
+                color : #fff;
             }
         }
     }

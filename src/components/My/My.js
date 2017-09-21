@@ -16,12 +16,13 @@ export default class My extends React.Component {
 	constructor(){
 		super()
 		this.state={
-			userName : "",
-			userPassword : "",
-			phone : "",
-			isRemember : false,
-			count : 60,
-			liked : true
+			userName: "",
+			userPassword: "",
+			phone: "",
+			isRemember: false,
+			count: 60,
+			liked: true,
+			dataBase: []
 		}
 		this.showNum = this.showNum.bind(this);
 		this.showPhone = this.showPhone.bind(this);
@@ -108,7 +109,7 @@ export default class My extends React.Component {
 	};
 	//点击登录按钮
 	load(){
-		
+
 	}
 	//改变登录方式
 	showNum(){
@@ -124,7 +125,7 @@ export default class My extends React.Component {
 		this.refs.num.style.borderBottom = "none";
 	}
 	render() {
-		
+		console.log(this.state)
 		return (
 			<div className="my">
 				<Header />
@@ -154,7 +155,7 @@ export default class My extends React.Component {
 							</div>
 							
 						</div>
-						<div className="login">
+						<div className="login" onClick={this.load}>
 							登录
 						</div>
 						<div className="footLogin">
