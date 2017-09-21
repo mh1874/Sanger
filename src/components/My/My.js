@@ -33,10 +33,12 @@ export default class My extends React.Component {
 		this.countDown = this.countDown.bind(this);
 		this.load = this.load.bind(this);
 		this.handleCheckbox = this.handleCheckbox.bind(this);
+		this.getLocal = this.getLocal.bind(this);
 	}
 	componentDidMount(){
 		var verifyCode = new window.GVerify("container");
-		this.showNum()
+		this.showNum();
+		this.getLocal();
 	}
 	//监听用户名input中的数据，储存在state中
 	changeName(e){
@@ -109,7 +111,35 @@ export default class My extends React.Component {
 	};
 	//点击登录按钮
 	load(){
-
+		let uname = this.refs.user.value;
+		let upwd = this.refs.pwd.value;
+		fetch(`/api/login?username=${uname}&psw=${upwd}`)
+			.then((res) => {
+				alert("登录成功");
+			})
+			.catch((err) => {
+				alert("登录失败");
+			})
+		//是否记住密码
+		if(this.state.isRemember === true){ //是否记住密码，若记住，则保存至localstorage，反之，清除
+			// let loginData = {this.state.userName,this.state.userPassword};
+			let loginData = {};
+			loginData.userName = uname;
+			loginData.userPassword = upwd;
+			localStorage.name = JSON.stringify( loginData )
+			this.setState({
+				userName : uname,
+				userPassword : upwd
+			})
+		}
+	}
+	//页面渲染完成是获取本地存储中的数据
+	getLocal(){
+		let userName1 = JSON.parse( localStorage.name ); 
+		this.setState({
+			userName : userName1.userName,
+			userPassword : userName1.userPassword
+		})
 	}
 	//改变登录方式
 	showNum(){
@@ -125,7 +155,6 @@ export default class My extends React.Component {
 		this.refs.num.style.borderBottom = "none";
 	}
 	render() {
-		console.log(this.state)
 		return (
 			<div className="my">
 				<Header />
@@ -137,8 +166,8 @@ export default class My extends React.Component {
 						</div>
 						<div className="numberLogin" ref="numberLogin">
 							<form method="post" name="" action="">
-								<input type="text" placeholder="用户名/邮箱地址" onChange={this.changeName} name="user"/>
-								<input type="password" placeholder="填写密码" onChange={this.changePwd} name="pwd"/>
+								<input type="text" placeholder="用户名/邮箱地址" onChange={this.changeName} name="user" ref="user" value={this.state.userName}/>
+								<input type="password" placeholder="填写密码" onChange={this.changePwd} name="pwd" ref="pwd" value={this.state.userPassword}/>
 							</form>
 						</div>
 						<div className="phoneLogin" ref="phoneLogin">
@@ -148,7 +177,7 @@ export default class My extends React.Component {
 								<div id="container"></div>
 							</div>
 							<div className="getCode">
-								<input type="text" placeholder="输入手机验证码" />
+								<input type="text" placeholder="输入手机验证码" ref="phone"/>
 								<div className="getCodeBtn">
 									<Button className="yanCode" onClick={this.success} ref="yanCode1"><span className="sendCode" ref="sendCode">发送验证码</span><span className="time" ref="timer">({this.state.count})秒后重新发送</span></Button>
 								</div>
