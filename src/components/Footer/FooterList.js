@@ -19,23 +19,24 @@ class FooterListUI extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			goodsObj: []
+			goodsObj: [],
+			goodsList: [],
+			finalList: []
 		}
 	}	
 	componentDidMount() {
-		let goodsNum = 0;
 		setTimeout(() => {
 			this.setState({
-				goodsObj: [this.props.Messages, goodsNum]
+				goodsObj: [this.props.Messages]
 			})
 		},1000)
 	}
 	render() {
+		console.log(this.props)
 		let addCount = this.props.addCount;
-//		console.log(this.props)
 		return (
 			<div className="FooterList">
-		      	<div onClick={()=>addCount(this.state.goodsObj)}>加入购物车</div>
+		      	<div onClick={()=>addCount(this.state.goodsObj, this.state.goodsList, this.state.finalList)}>加入购物车</div>
 		      	<span>$0.00</span>
 		    </div>
 		);
@@ -48,12 +49,15 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
 	return {
-		addCount: (goodsId) => {
-			goodsId[1] = ++goodsId[1];
-			console.log(goodsId[1])
+		addCount: (goodsMes, goodsList, finalList) => {
+			let newList = {};
+			goodsList.push(goodsMes);
+			goodsList.forEach((e) => {
+	  			newList[e] = newList[e]>=1 ? newList[e]+1 : 1;
+	  		});
 			dispatch({
 				type: "GET_Classify",
-				payload: goodsId
+				payload: newList
 			})
 		}
 	};
