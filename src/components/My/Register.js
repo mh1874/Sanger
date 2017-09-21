@@ -9,18 +9,22 @@ import {Link} from 'react-router-dom';
 
 class Register extends React.Component{
 	constructor(){
-		super()
+		super();
+		//定义初始值
 		this.state = {
 			fnOphone : false,
 			fnOpaw : false,
 			fnOconfirm : false,
+			fnOpic : false,
 			username : "",
 			passwords : "",
 			confirm : ""
 		}
+		//改变方法指针
 		this.fnPhone = this.fnPhone.bind(this)
 		this.fnPaw = this.fnPaw.bind(this)
 		this.fnConfirm = this.fnConfirm.bind(this)
+		this.fnPic = this.fnPic.bind(this)
 		this.fnSub = this.fnSub.bind(this)
 	}
 	componentDidMount(){
@@ -79,12 +83,29 @@ class Register extends React.Component{
 			this.refs.Prompt_pic.style.display = "none";
 		}
 	}
+	//判断图形验证码是否正确
+	fnPic(evnet){
+		var verifyCode = new window.GVerify("container");
+		var res = verifyCode.validate(document.getElementById("aaa").value);
+		if(res){
+			this.setState({
+				fnOpic : true
+			})
+		}else{
+			this.refs.Prompt_username.style.display = "none";
+			this.refs.Prompt_password.style.display = "none";
+			this.refs.Prompt_confirm.style.display = "none";
+			this.refs.Prompt_pic.style.display = "block";
+		}
+	}
+	//注册按钮，判断注册是否成功
 	fnSub(){
 		console.log(this.refs.txt.value)
 		console.log(this.refs.pass.value)
 		var a = this.refs.txt.value;
 		var b = this.refs.pass.value;
-		if (this.state.fnOphone && this.state.fnOpaw && this.state.fnOconfirm) {
+		//fetch添加注册信息到数据库
+		if (this.state.fnOphone && this.state.fnOpaw && this.state.fnOconfirm && this.state.fnOpic) {
 			fetch(`/api/regist?username=${a}&psw=${b}`)
 				.then((res) => {
 					alert("注册成功");
@@ -111,7 +132,7 @@ class Register extends React.Component{
 							<input type="password" placeholder="密码：8~20位字符，包含字母和数字" onBlur={this.fnPaw} ref="pass"/>
 							<input type="password" placeholder="确认密码" onBlur={this.fnConfirm} ref="conf"/>
 							<div className="SecurityCode">
-								<input type="text" placeholder="请输入图片字符"/>
+								<input type="text" placeholder="请输入图片字符" onBlur={this.fnPic} id="aaa"/>
 								<div id="container"></div>
 							</div>
 							<div className="getCode">
