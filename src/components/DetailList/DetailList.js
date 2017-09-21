@@ -109,9 +109,11 @@ class DetailList extends React.Component {
 			     	<p></p>
 			    </div>
 				<div className="detail_box">
-					<span className="detail_car">
-						<i className="iconfont">&#xe501;</i>
-					</span>
+					<Link to={"/ShopCart"}>
+						<span className="detail_car">
+							<i className="iconfont">&#xe501;</i>
+						</span>
+					</Link>
 					<div className="detail_src">
 						<img className="detail_src2" src={this.state.List_detail.headImg} alt={this.state.List_detail.chineseName} />
 					</div>
@@ -192,7 +194,7 @@ class DetailList extends React.Component {
 						}
 					</div>
 				</div>
-				<FooterList />
+				<FooterList Messages={this.state.List_detail._id} />
 			</div>
 		);
 	}

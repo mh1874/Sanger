@@ -20,18 +20,18 @@ import './styles/my/Register.css';
 import './styles/ShopCart/ShopCart.css';
 
 import App from './App';
-//import registerServiceWorker from './registerServiceWorker';
-//
-//import { createStore,combineReducers } from 'redux';
-//import {Provider} from 'react-redux';
+import registerServiceWorker from './registerServiceWorker';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+import { createStore,combineReducers } from 'redux';
+import {Provider} from 'react-redux';
 //reducers
 
 
-//import AllReducers from './reducers/AllReducers.js'
-//const reducers = combineReducers(AllReducers);
+import AllReducers from './reducers/AllReducers.js'
+const reducers = combineReducers(AllReducers);
 //store 必要参数是reducers 后面还可以写中间件之类的参数
-//const store = createStore(reducers);
-import injectTapEventPlugin from 'react-tap-event-plugin';
+const store = createStore(reducers);
  
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -39,12 +39,15 @@ injectTapEventPlugin();
 
 
 const renderPage = () => {
-	ReactDOM.render(<App />, document.getElementById('root'));
+	ReactDOM.render(
+					<Provider store={store}>
+						<App />
+					</Provider>, document.getElementById('root'));
 }
 renderPage();
 //订阅
-//store.subscribe(renderPage);
+store.subscribe(renderPage);
 
-//registerServiceWorker();
+registerServiceWorker();
 
 

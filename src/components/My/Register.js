@@ -84,7 +84,7 @@ class Register extends React.Component{
 		}
 	}
 	//判断图形验证码是否正确
-	fnPic(evnet){
+	fnPic(){
 		var verifyCode = new window.GVerify("container");
 		var res = verifyCode.validate(document.getElementById("aaa").value);
 		if(res){
@@ -105,7 +105,7 @@ class Register extends React.Component{
 		var a = this.refs.txt.value;
 		var b = this.refs.pass.value;
 		//fetch添加注册信息到数据库
-		if (this.state.fnOphone && this.state.fnOpaw && this.state.fnOconfirm && this.state.fnOpic) {
+		if (this.state.fnOphone && this.state.fnOpaw && this.state.fnOconfirm) {
 			fetch(`/api/regist?username=${a}&psw=${b}`)
 				.then((res) => {
 					alert("注册成功");
