@@ -2,11 +2,9 @@ import React from 'react';
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
 //input特效插件
-import { Form, Icon, Input, Button, Checkbox, message } from 'antd';
+import { Button, message } from 'antd';
 //引入验证码插件
 import '../../gVerify.js';
-//引入material-ui
-import RaisedButton from 'material-ui/RaisedButton';
 
 //引入验证码插件
 import '../../gVerify.js';
@@ -36,7 +34,7 @@ export default class My extends React.Component {
 		this.getLocal = this.getLocal.bind(this);
 	}
 	componentDidMount(){
-		var verifyCode = new window.GVerify("container");
+//		var verifyCode = new window.GVerify("container");
 		this.showNum();
 		this.getLocal();
 	}

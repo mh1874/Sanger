@@ -218,7 +218,7 @@ class Home extends React.Component {
 														<Link to={'/articles/' + item._id}>
 															<Card bodyStyle={{ padding: 0 }} className="article-card">
 															    <div className="custom-image">
-															      <img src="http://static.21cake.com/public/images/a9/75/d9/24361110e115f5fe45681b0c5c2b0f5c.jpg"/>
+															      <img alt="three" src="http://static.21cake.com/public/images/a9/75/d9/24361110e115f5fe45681b0c5c2b0f5c.jpg"/>
 															    </div>
 															    <div className="custom-card">
 															    	<h6>{item.title}</h6>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../Footer/Footer.js';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
@@ -82,7 +81,7 @@ class ShopCartUI extends React.Component {
 				</Link>
 				<div className="shopCartContent">
 					<div className="nothing" ref="nothing">
-						<img src="http://static.21cake.com/themes/wap/img/cart-empty.png"/>
+						<img alt="shoppingcart" src="http://static.21cake.com/themes/wap/img/cart-empty.png"/>
 						<p>您的购物车里还没有商品</p>
 						<p>
 							<Link to={"/classify"}>
@@ -99,7 +98,7 @@ class ShopCartUI extends React.Component {
 								this.state.list.map((item, index)=>{
 									return <li key={item._id}>
 											<div className="shopInfo">
-												<img src={item.headImg}/>
+												<img alt="goodsImg" src={item.headImg}/>
 												<div className="shopName">
 													<h2>{item.englishName}</h2>
 													<h2>{item.chineseName}</h2>
@@ -115,7 +114,7 @@ class ShopCartUI extends React.Component {
 												</div>
 											</div>
 											<div className="give">
-												<img src={item.group.img} />
+												<img alt="giftsImg" src={item.group.img} />
 												<span>{item.group.name}</span>
 											</div>
 											<div className="birthday">

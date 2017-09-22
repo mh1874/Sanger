@@ -1,7 +1,6 @@
 import React from 'react';
 import Footer from '../Footer/Footer.js';
 import Header from '../Header/Header.js';
-import { Input } from 'antd';
 //引入验证码插件
 import '../../gVerify.js';
 
@@ -73,7 +72,7 @@ class Register extends React.Component{
 	fnConfirm(event){
 //		console.log(event.target.value)
 //		console.log(this.state.passwords)
-		if (event.target.value == this.state.passwords && event.target.value != "") {
+		if (event.target.value === this.state.passwords && event.target.value !== "") {
 			this.setState({
 				confirm : event.target.value,
 				fnOconfirm : true

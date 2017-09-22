@@ -72,7 +72,6 @@ class DetailList extends React.Component {
 						for(let k=0; k<(5-data.sweetNum); k++){
 							sweetyname.push("iconfont")
 						}
-						console.log(sweetyname)
 						setTimeout(() => {
 							this.setState({   //让页面上数据更新
 						 		List_detail: data,

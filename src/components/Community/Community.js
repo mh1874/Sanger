@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '../Footer/Footer.js';
 import {Link} from 'react-router-dom';
 
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
 import { Card } from 'antd';
 //引入betterScroll
 import BScroll from 'better-scroll'
@@ -10,8 +10,6 @@ import BScroll from 'better-scroll'
 export default class Community extends React.Component {
 	constructor() {
 		super();
-		const SubMenu = Menu.SubMenu;
-		const MenuItemGroup = Menu.ItemGroup;
 		this.monthly = this.monthly.bind(this);
 		this.Sangerhidden = this.Sangerhidden.bind(this);
 		this.TreeHolehidden = this.TreeHolehidden.bind(this);
@@ -78,7 +76,7 @@ export default class Community extends React.Component {
 												<Link to={'/articles/' + item._id}>
 													<Card bodyStyle={{ padding: 0 }} className="article-card">
 													    <div className="custom-image">
-													      <img src="http://static.21cake.com/public/images/a9/75/d9/24361110e115f5fe45681b0c5c2b0f5c.jpg"/>
+													      <img alt="one" src="http://static.21cake.com/public/images/a9/75/d9/24361110e115f5fe45681b0c5c2b0f5c.jpg"/>
 													    </div>
 													    <div className="custom-card">
 													    	<h6>{item.title}</h6>
@@ -98,7 +96,7 @@ export default class Community extends React.Component {
 								    	<p>Who is No.1</p>
 								    </div>
 								    <div className="custom-image">
-								      <img src="http://static.21cake.com//activity/site/21cake_magazine/img/1.png"/>
+								      <img alt="two" src="http://static.21cake.com//activity/site/21cake_magazine/img/1.png"/>
 								    </div>
 								</Card>
 							</li>
