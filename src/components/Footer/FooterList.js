@@ -2,18 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
-//class FooterList extends React.Component {
-//	render() {
-//		var Messages = this.props.Messages;
-//		console.log(Messages._id)
-//		return (
-//			<div className="FooterList">
-//		      	<div>加入购物车</div>
-//		      	<span>$0.00</span>
-//		    </div>
-//		);
-//	}
-//}
 
 class FooterListUI extends React.Component {
 	constructor() {

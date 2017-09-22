@@ -1,10 +1,7 @@
-
 import React from 'react';
 import Footer from '../Footer/Footer.js';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-
-
 
 class ShopCartUI extends React.Component {
 	constructor() {
@@ -13,22 +10,18 @@ class ShopCartUI extends React.Component {
 			list: [],
 			goodsMes: {},
 			goodsNum: [],
-			goodsPrice: ''
+			goodsPrice: ""
 		};
-//		this.addCake = this.addCake.bind(this);
-//		this.addNum = this.addNum.bind(this);
-//		this.reduceNum = this.reduceNum.bind(this);
-//		this.deleteGoods = this.deleteGoods.bind(this);
 	}
 	componentWillMount() {
 		let goodsList = this.props.goodsMes_list;
 		let newList = {};
 		goodsList.forEach((e) => {
-  			newList[e] = newList[e]>=1 ? newList[e]+1 : 1;
-  		});
-  		this.setState({
-  			goodsMes: newList
-  		})
+			newList[e] = newList[e]>=1 ? newList[e]+1 : 1;
+		});
+		this.setState({
+			goodsMes: newList
+		})
 		let that = this;
 		let data = [];
 		let num = [];
@@ -36,46 +29,44 @@ class ShopCartUI extends React.Component {
 		fetch('/api/getdataGood').then((res) => {
 			return res.json();
 		}).then((dataCart) => {
-				for(let i = 0; i < dataCart.length; i++){
-					for(let j in that.state.goodsMes){
-						if(dataCart[i]._id === j){
-							data.push(dataCart[i]);
-							num.push(that.state.goodsMes[j]);
-							price += dataCart[i].price.newPrice * that.state.goodsMes[j];
-							setTimeout(() => {
-								this.setState({
-									list: data,
-									goodsNum: num,
-									goodsPrice: price
-								})
-							},0)
+			for(let i = 0; i < dataCart.length; i++){
+				for(let j in that.state.goodsMes){
+					if(dataCart[i]._id === j){
+						data.push(dataCart[i]);
+						num.push(that.state.goodsMes[j]);
+						price += dataCart[i].price.newPrice * that.state.goodsMes[j];
+						setTimeout(() => {
+							this.setState({
+								list: data,
+								goodsNum: num,
+								goodsPrice: price
+							})
+						},0)
 					}else{
 						fetch("/api/getdataAaa").then((res) =>{
 							return res.json()
 						}).then((data_b)=>{
-							setTimeout(() => {
-								for (let j=0; j<data_b.length; j++ ){
-									for(let k in that.state.goodsMes){
-										if (data_b[j]._id === k) {
-											data.push(data_b[j]);
-											num.push(that.state.goodsMes[k])
-											price += data_b[j].price.newPrice * that.state.goodsMes[k];
-											setTimeout(() => {
-												this.setState({   //让页面上数据更新
-											 		list: data,
-											 		goodsNum: num,
-											 		goodsPrice: price
-											 	})
-											},0)	
-										}
-									}	
-								}
-							},0)
+							for (let j=0; j<data_b.length; j++ ){
+								for(let k in that.state.goodsMes){
+									if (data_b[j]._id === k) {
+										data.push(data_b[j]);
+										num.push(that.state.goodsMes[k]);
+										price += data_b[j].price.newPrice * that.state.goodsMes[k];
+										setTimeout(() => {
+											this.setState({   //让页面上数据更新
+										 		list: data,
+										 		goodsNum: num,
+										 		goodsPrice: price
+										 	})
+										},0)	
+									}
+								}	
+							}
 						})
 					}
 				}
-			}
-		})
+			}	
+		})	
 	}
 	componentDidMount() {
 		setTimeout(() => {
@@ -83,12 +74,11 @@ class ShopCartUI extends React.Component {
 		},1000)
 	}
 	render() {
-		console.log(this.props)
 		return (
 			<div className="shoppingCart">
 				<h1 className="shopCartHead">购物车</h1>
 				<Link to="/">
-				<span className="fan">返回</span>
+					<span className="fan">返回</span>
 				</Link>
 				<div className="shopCartContent">
 					<div className="nothing" ref="nothing">
@@ -156,7 +146,6 @@ class ShopCartUI extends React.Component {
 		);   
 	}
 }
-
 
 const mapStateToProps = (state) => {
 	return {
