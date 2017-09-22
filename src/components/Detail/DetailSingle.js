@@ -1,5 +1,5 @@
 import React from 'react'
-export default class Detail extends React.Component {
+export default class DetailSingle extends React.Component {
 	render() {
 		console.log(this.props);
 		return (

@@ -1,16 +1,32 @@
 .footer {
     width: 100%;
-    height: 48px;
-    border-top: 1px solid #d8d8d8;
+    height: .48rem;
+    border-top: .01rem solid #d8d8d8;
     .footer-ul {
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
         li {
             height: 100%;
             width: 25%;
-            line-height: 48px;
-            text-align: center;
+            .selected {
+                color: skyblue;
+            }
+            a {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: .05rem;
+                i {
+                    font-size: .18rem;
+                }
+            }
+            span {
+                margin-top: .08rem;
+                font-size: .1rem;
+            }
         }
     }
 }

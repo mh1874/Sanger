@@ -1,15 +1,19 @@
 import React from 'react'
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'
 
 import Home from './components/Home/Home.js'
 import Classify from './components/Classify/Classify.js'
 import Community from './components/Community/Community.js'
 import My from './components/My/My.js'
-import Detail from './components/Detail/Detail.js'
+import Register from './components/My/Register.js'
+import DetailSingle from './components/Detail/DetailSingle.js'
+import DetailList from './components/DetailList/DetailList.js'
+
+import Articles from './components/Articles/Articles.js'
+import ShopCart from './components/ShopCart/ShopCart.js'
 
 
 const App = () => (
@@ -17,9 +21,13 @@ const App = () => (
     <div>
       <Route exact path="/" component={Home}/>
       <Route path="/classify" component={Classify}/>
+      <Route path="/shopCart" component={ShopCart}/>
       <Route path="/community" component={Community}/>
       <Route path="/my" component={My}/>
-      <Route path="/detail/:id" component={Detail}/>
+      <Route path="/register" component={Register}/>
+      <Route path="/detailSingle/:id" component={DetailSingle}/>
+      <Route path="/detailList/:id" component={DetailList}/>
+      <Route path="/articles/:id" component={Articles}/>
     </div>
   </Router>
 )

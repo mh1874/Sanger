@@ -1,8 +1,99 @@
 .community {
     display: flex;
     flex-direction: column;
-    .container {
+    .community-header {
+        width: 100%;
+        height: .46rem;
+        line-height: .46rem;
+        text-align: center;
+        h5{
+            font-size: .20rem;
+        }
+    }
+    .title-list {
+        height: .46rem;
+        .community-title {
+            width: 100%;
+            height: .46rem;
+            .title-item {
+                width: 50%;
+                height: .46rem;
+                float: left;
+                font-size: .16rem;
+                text-align: center;
+                line-height: .46rem;
+                p {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .community-container {
         flex: 1;
-        background: #7E8C8D;
+        overflow-y: auto;
+        position: relative;
+        width: 100%;
+        .community-wrapper {
+            position: absolute;
+            left: .27rem;
+            top: .2rem;
+            width: 3.2rem;
+            height: auto;
+            .sanger-ul{
+                width: 100%;
+                margin: .1rem 0;
+                position: absolute;
+                left: 0;
+                transition: all .5s; 
+                .community-item {
+                    width: 3.2rem;
+                    .custom-image {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .custom-card {
+                        padding: .05rem;
+                        h6 {
+                            padding: .1rem 0;
+                            font-size: .16rem;
+                        }
+                        p {
+                            padding: .05rem;
+                            font-size: .12rem;
+                        }  
+                    }
+                }
+            }
+            .treehole-ul {
+                width: 100%;
+                margin: .1rem 0;
+                position: absolute;
+                left: 0;
+                transition: all .5s; 
+                .treehole-item {
+                    width: 3.2rem;
+                    .custom-image {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .custom-card {
+                        padding: .05rem;
+                        h6 {
+                            padding: .1rem 0;
+                            font-size: .14rem;
+                            color: #999999;
+                        }
+                        p {
+                            padding: .05rem;
+                            font-size: .18rem;
+                            color: #000;
+                        }  
+                    }
+                }
+            }
+        }
     }
 }

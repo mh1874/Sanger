@@ -1,0 +1,249 @@
+.shoppingCart{
+    display: flex;
+    flex-direction: column;
+    .shopCartHead{
+        width: 100%;
+        height : .43rem;
+        text-align: center;
+        line-height: .43rem;
+        font-size: .2rem;
+    }
+    .fan{
+        width: 20%;
+        height : .43rem;
+        font-size: .15rem;
+        position: absolute;
+        text-align: center;
+        line-height: .43rem;
+        top : 0;
+        left : 0;
+    }
+    .shopCartContent{
+        width: 100%;
+        flex: 1;
+        background: #f1f1f1;
+        overflow: auto;
+        .nothing{
+            width: 50%;
+            height : 2rem;
+            margin: 0 auto;
+            margin-top: 50%;
+            display : none;
+            img{
+                width: 100%;
+            }
+            p{
+              width: 100%;
+              height : .3rem;
+              text-align: center;
+              font-size: .13rem;
+              line-height: .3rem; 
+              color: #D5BFA7; 
+            }
+            p:last-child{
+                a{
+                    color: #442818;
+                }
+            }
+        }
+        .haveGoods{
+          width: 100%;
+            .seilAvtive{
+                width: 100%;
+                height : .5rem;
+                text-align: center;
+                line-height: .5rem;
+                font-size: .14rem;
+                color : #442818;
+            }
+            .shopGoods{
+                width: 100%;
+                overflow: hidden;
+                li{
+                    width: 100%;
+                    height : 2.8rem;
+                    background: #fff;
+                    display: flex;
+                    flex-direction: column;
+                    padding: .05rem;
+                    border-top: .02rem solid #442818;
+                    .shopInfo{
+                        width: 80%;
+                        height : 1.2rem;
+                        margin-left: 10%;
+                        display: flex;
+                        img{
+                            width: 40%;
+                            height : 100%;
+                            border:none;
+                        }
+                        .shopName{
+                            width: 30%;
+                            height : 100%;
+                            font-size: .14rem;
+                            h2{
+                                width: 150%;
+                                font-weight: 600;
+                            }
+                            h2:last-child{
+                                margin-top: .1rem;
+                            }
+                            p{
+                                width: 100%;
+                                height : .3rem;
+                                margin-top: .1rem;
+                            }
+                        }
+                        .shopNum{
+                            width: 30%;
+                            height : 100%;
+                            position: relative;
+                            .trimNum{
+                                width: 100%;
+                                height : .4rem;
+                                position: absolute;
+                                bottom: 0;
+                                display: flex;
+                                .reduce{
+                                    width: 33%;
+                                    height : 100%;
+                                    font-size: .2rem;
+                                    background: #efefef;
+                                    span{
+                                        display: block;
+                                        width: 100%;
+                                        height : 100%;
+                                        text-align: center;
+                                        line-height: .4rem;
+                                        display: none;
+                                    }
+                                    .iconfont{
+                                        display: block;
+                                        width: 100%;
+                                        height : 100%;
+                                        text-align: center;
+                                        line-height: .4rem;
+                                        font-size: .22rem;
+                                        color : blue;
+                                    }
+                                }
+                                .showShopNum{
+                                    width: 33%;
+                                    height : 100%;
+                                    font-size: .2rem;
+                                    text-align: center;
+                                    line-height: .4rem;
+                                }
+                                .increase{
+                                    width: 33%;
+                                    height : 100%;
+                                    font-size: .2rem;
+                                    text-align: center;
+                                    line-height: .4rem;
+                                    background: #efefef;
+                                }
+                            }
+                        }
+                    }
+                    .give{
+                        margin-top: .2rem;
+                        width: 80%;
+                        height : .5rem;
+                        margin-left: 10%;
+                        position: relative;
+                        img{
+                            width: .5rem;
+                            height : 100%;
+                        }
+                        span{
+                            position: absolute;
+                            top : 0;
+                            right : 0;
+                            margin-right: 20%;
+                            display: inline-block;
+                            width: 55%;
+                            height : 100%;
+                            line-height: .5rem;
+                            font-size: .12rem;
+                        }
+                    } 
+                    .birthday{
+                        width: 80%;
+                        margin-left: 10%;
+                        height : .5rem;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: .2rem;
+                        .card{
+                            width: 20%;
+                            height : 100%;
+                            background: #fbfbfb;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            span{
+                                display: block;
+                                width: 100%;
+                                height : 50%;
+                                margin-top: 25%;
+                                color: #fff;
+                                font-size: .16rem;
+                                text-align: center;
+                                line-height: 0.25rem;
+                                background: #000;
+                            }
+                        }
+                        .addCard{
+                            width: 60%;
+                            height: 100%;
+                            line-height: 0.3rem;
+                            text-align: center;
+                            font-size: 0.16rem;
+                        }
+                        .open{
+                            width: 10%;
+                            height : 100%;
+                            line-height: 0.3rem;
+                            text-align: center;
+                            font-size: 0.16rem;
+                        }
+                    }  
+                }
+            }
+        }
+    }
+    .shopFoot{
+        width: 100%;
+        height: .48rem;
+        border-top: .01rem solid #d8d8d8;
+        .buy{
+            width: 50%;
+            height : 100%;
+            float: right;
+            display: flex;
+            .shopPrice{
+                width: 60%;
+                height : 100%;
+                p{
+                    width: 100%;
+                    height : 50%;
+                    font-size: .12rem;
+                    font-weight: 600;
+                    height : 50%;
+                    float: right ;
+                    line-height: .24rem;
+                    text-align: center
+                }
+            }
+            .get{
+                width: 40%;
+                height : 100%;
+                background: black;
+                text-align: center;
+                line-height: .48rem;
+                font-size: .17rem;
+                color : #fff;
+            }
+        }
+    }
+}

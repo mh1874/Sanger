@@ -30,13 +30,15 @@ footer, header, menu, nav, section {
 div {
   height: 100%; }
 
+img {
+  background-color: #eee; }
+
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font-weight: normal;
   vertical-align: baseline; }
 
@@ -65,7 +67,8 @@ li {
 
 ::-webkit-scrollbar {
   width: 5px;
-  height: 5px; }
+  height: 5px;
+  display: none; }
 
 ::-webkit-scrollbar-track-piece {
   background-color: rgba(0, 0, 0, 0.2);
